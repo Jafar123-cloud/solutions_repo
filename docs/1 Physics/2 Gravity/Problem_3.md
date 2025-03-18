@@ -312,4 +312,5 @@ plt.legend()
 plt.grid(True)
 plt.axis('equal')
 plt.show()
+
 ![alt text](image-3.png)
