@@ -76,3 +76,91 @@ Where:
 - **Space Probes**: Space probes, like those sent to other planets, often follow parabolic or hyperbolic trajectories. They are given enough velocity to escape Earth's gravity and head toward their target destination, such as Mars or Jupiter.
 - **Payloads Returning to Earth**: If a payload needs to return to Earth, its trajectory must be carefully controlled to ensure it follows a parabolic or elliptical path, eventually re-entering the atmosphere.
 
+# Task 2 : Numerical Analysis of Payload Trajectory Based on Initial Conditions
+
+In this task, we will perform a numerical analysis to compute the path of a payload released near Earth, given initial conditions such as position, velocity, and altitude. Using numerical methods like Euler’s method or the Runge-Kutta method, we can simulate the motion of the payload under the influence of Earth's gravity. This simulation will allow us to visualize the trajectory based on different initial conditions.
+
+## 1. **Gravitational Forces and Equations of Motion**
+
+The motion of the payload is governed by Newton's Law of Gravitation and the following equations:
+
+- **Gravitational Force:** 
+  $$ F = \frac{G M m}{r^2} $$
+
+  Where:
+  - $F$ is the gravitational force,
+  - $G$ is the gravitational constant,
+  - $M$ is the mass of the Earth,
+  - $m$ is the mass of the object,
+  - $r$ is the distance between the center of the Earth and the object.
+
+- **Acceleration due to Gravity:**
+  $$ a = \frac{F}{m} = \frac{G M}{r^2} $$
+
+  Using the above force, we can calculate the acceleration at each point in the trajectory.
+
+- **Equations of Motion:**
+  Using the second law of motion ($F = ma$), we can determine the acceleration of the payload in both the radial and tangential directions:
+
+  $$ \ddot{r} = - \frac{GM}{r^2} $$
+
+  Where:
+  - $\ddot{r}$ is the radial acceleration of the payload.
+
+In our simulation, we will numerically solve the equations of motion using a simple numerical integration technique (Euler’s method) or a more accurate method (Runge-Kutta) to compute the position and velocity at each time step.
+
+## 2. **Python Script for Numerical Simulation**
+
+The following Python code uses Euler's method to simulate the trajectory of the payload based on initial conditions (position, velocity, and altitude). We will track the position and velocity at each time step and visualize the trajectory.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 5.972e24     # Mass of Earth (kg)
+R = 6371e3       # Radius of Earth (m)
+
+# Initial conditions: position, velocity, and altitude
+initial_position = np.array([0, R + 100e3])  # Initial position: 100 km above Earth
+initial_velocity = np.array([0, 7500])      # Initial velocity: 7.5 km/s tangential (typical orbital velocity)
+
+# Time settings
+dt = 10          # Time step (seconds)
+total_time = 20000  # Total simulation time (seconds)
+steps = int(total_time / dt)
+
+# Arrays to store position and velocity over time
+position = np.zeros((steps, 2))
+velocity = np.zeros((steps, 2))
+position[0] = initial_position
+velocity[0] = initial_velocity
+
+# Numerical simulation using Euler's method
+for i in range(1, steps):
+    r = np.linalg.norm(position[i-1])  # Distance from the center of Earth
+    a = -G * M / r**2  # Radial acceleration (m/s^2)
+    direction = position[i-1] / r  # Unit vector in the direction of the position
+    
+    # Update velocity and position using Euler's method
+    velocity[i] = velocity[i-1] + np.array([a * direction[0], a * direction[1]]) * dt
+    position[i] = position[i-1] + velocity[i] * dt
+
+# Extract x and y positions for plotting
+x_position = position[:, 0]
+y_position = position[:, 1]
+
+# Plot the trajectory of the payload
+plt.figure(figsize=(8, 6))
+plt.plot(x_position, y_position, label='Payload Trajectory')
+plt.scatter(0, 0, color='red', label='Earth')  # Earth at the center
+plt.title('Trajectory of Payload Released Near Earth')
+plt.xlabel('Distance in x (m)')
+plt.ylabel('Distance in y (m)')
+plt.legend()
+plt.grid(True)
+plt.axis('equal')
+plt.show()
+![alt text](image-2.png)
+
