@@ -161,3 +161,58 @@ Where:
 - $T_2$ and $r_2$ are the orbital period and radius of Jupiter.
 
 By substituting the known values for Earth and Jupiter, we can verify that Kepler's Third Law holds true across the Solar System and makes it possible to compare the motion of planets.
+
+# Task 4 : Implementing a Computational Model to Simulate Circular Orbits
+
+In this task, we will implement a computational model to simulate circular orbits and verify the relationship between the orbital period and the orbital radius, as described by Kepler's Third Law. We will write a Python script to simulate the motion of a satellite orbiting a central body and calculate its orbital period based on its radius.
+
+## 1. **Kepler's Third Law and Circular Orbits**
+
+Kepler's Third Law states that:
+
+$$ T^2 = \frac{4 \pi^2 r^3}{G M} $$
+
+Where:
+- $T$ is the orbital period,
+- $r$ is the orbital radius,
+- $G$ is the gravitational constant, and
+- $M$ is the mass of the central body.
+
+For circular orbits, we will simulate the motion of a satellite and calculate the orbital period for various orbital radii, using the above law. We can then compare the computed periods to the theoretical values to verify the relationship.
+
+## 2. **Python Script to Simulate Circular Orbits**
+
+Below is a Python script that simulates circular orbits for different orbital radii and calculates the orbital period based on Kepler's Third Law.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 5.972e24     # Mass of Earth (kg)
+pi = np.pi
+
+# Function to calculate orbital period using Kepler's Third Law
+def orbital_period(r):
+    T = 2 * pi * np.sqrt(r**3 / (G * M))  # Orbital period (seconds)
+    return T
+
+# Range of orbital radii (in meters)
+radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km
+
+# Calculate the orbital periods for each radius
+periods = orbital_period(radii)
+
+# Convert orbital period from seconds to days
+periods_days = periods / (60 * 60 * 24)
+
+# Plot the relationship between orbital period and orbital radius
+plt.figure(figsize=(8, 6))
+plt.plot(radii, periods_days, label='Orbital Period', color='b')
+plt.xlabel('Orbital Radius (m)')
+plt.ylabel('Orbital Period (days)')
+plt.title('Orbital Period vs Orbital Radius')
+plt.grid(True)
+plt.legend()
+plt.show()
