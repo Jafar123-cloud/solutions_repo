@@ -167,3 +167,44 @@ The idealized model of projectile motion assumes uniform gravitational accelerat
 - **Sports (Football, Basketball, Golf, etc.):** Air resistance and spin play crucial roles. The Magnus effect explains curving trajectories due to spin.
 - **Military and Space Applications:** Artillery and missile trajectories account for drag, wind, and Coriolis force due to Earth's rotation.
 - **Rocket Launches:** Rockets experience varying gravitational fields and atmospheric densities, requiring advanced modeling.
+
+
+
+# Implementation of Projectile Motion Simulation
+
+## Computational Simulation of Projectile Motion
+
+To better understand the relationship between the range and the angle of projection, we develop a Python-based simulation. This script models projectile motion, incorporating different initial velocities and gravitational conditions. The visualization will help analyze how these parameters affect the range.
+
+## Python Script for Simulation
+
+Below is a Python script that simulates projectile motion and plots the range as a function of the angle of projection.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g = 9.81  # Acceleration due to gravity (m/s^2)
+v0_values = [10, 20, 30]  # Different initial velocities (m/s)
+angles = np.linspace(0, 90, 100)  # Angle range from 0 to 90 degrees
+
+def compute_range(v0, theta):
+    """Compute the range of a projectile for a given initial velocity and angle."""
+    theta_rad = np.radians(theta)
+    return (v0 ** 2 * np.sin(2 * theta_rad)) / g
+
+# Plot range vs. angle for different initial velocities
+plt.figure(figsize=(8, 6))
+
+for v0 in v0_values:
+    ranges = [compute_range(v0, theta) for theta in angles]
+    plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
+
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (m)')
+plt.title('Projectile Range as a Function of Angle')
+plt.legend()
+plt.grid(True)
+plt.show()
+![alt text](image.png)
