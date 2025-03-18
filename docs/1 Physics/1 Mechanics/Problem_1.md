@@ -169,7 +169,7 @@ The idealized model of projectile motion assumes uniform gravitational accelerat
 - **Rocket Launches:** Rockets experience varying gravitational fields and atmospheric densities, requiring advanced modeling.
 
 
-
+# Task 4 : Implementation
 import numpy as np
 import matplotlib.pyplot as plt
 
