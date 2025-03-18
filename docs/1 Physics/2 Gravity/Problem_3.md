@@ -164,3 +164,67 @@ plt.axis('equal')
 plt.show()
 ![alt text](image-2.png)
 
+# Task 3 : Relating Trajectories to Orbital Insertion, Reentry, and Escape Scenarios
+
+The trajectory of a payload released near Earth can follow various paths, including elliptical, parabolic, or hyperbolic trajectories, depending on its initial conditions. These different trajectories play a crucial role in the success of space missions, influencing processes such as orbital insertion, reentry, and escape. Understanding how these trajectories relate to these scenarios is essential for mission planning, satellite deployment, and space exploration.
+
+## 1. **Orbital Insertion**
+
+Orbital insertion refers to the process of placing a spacecraft into a stable orbit around Earth or another celestial body. Achieving the correct trajectory for orbital insertion requires precise control of the spacecraft's speed and direction, as it must enter an elliptical orbit around the Earth.
+
+### 1.1. **Elliptical Trajectories and Orbital Insertion**
+
+- **Elliptical Trajectory:** This is the typical path followed by spacecraft after successful orbital insertion. An elliptical orbit allows a spacecraft to stay in orbit around Earth, following a path where the object alternates between being closer and farther from the Earth. 
+- **Initial Velocity and Altitude:** The velocity and altitude of the spacecraft at the moment of insertion determine the shape and size of the orbit. If the spacecraft is launched with the right speed and angle, it will follow an elliptical path and remain in orbit.
+- **Example:** Satellites in low Earth orbit (LEO) or geostationary orbit (GEO) follow elliptical orbits. The spacecraft may undergo a series of engine burns (orbital maneuvers) to adjust the orbit and circularize the path.
+
+### 1.2. **Key Points in Orbital Insertion:**
+- The spacecraft’s velocity must be carefully controlled to avoid falling back to Earth or escaping into space.
+- The spacecraft must reach a sufficient speed to counteract the pull of gravity, avoiding atmospheric drag in the case of lower orbits.
+
+## 2. **Reentry**
+
+Reentry is the process by which a spacecraft returns to Earth’s atmosphere after completing its mission. This phase is particularly challenging due to the high velocities involved and the friction from the atmosphere, which generates extreme heat. Reentry occurs when a spacecraft follows a trajectory that brings it back to Earth from its orbital path.
+
+### 2.1. **Elliptical Trajectories and Reentry**
+
+- **Elliptical Trajectory:** If the spacecraft is in an elliptical orbit, its path may eventually intersect with the Earth's atmosphere. In this case, the spacecraft will experience reentry, which requires a controlled descent to ensure safe landing or recovery.
+- **Deorbiting Maneuvers:** A spacecraft in orbit can perform a deorbit burn, which reduces its velocity and changes its orbit from elliptical to a trajectory that leads back to Earth. The spacecraft will enter a steep descent into the atmosphere.
+- **Example:** The Space Shuttle's reentry was carefully planned to ensure that it followed a controlled elliptical trajectory that allowed for a safe descent and landing.
+
+### 2.2. **Key Points in Reentry:**
+- Reentry is a critical phase, requiring heat shields and precise control to avoid burning up due to atmospheric friction.
+- The spacecraft’s trajectory must be accurately calculated to ensure it reenters the atmosphere at the right angle and speed.
+
+## 3. **Escape Scenarios**
+
+Escape scenarios occur when a spacecraft is launched with enough velocity to overcome Earth's gravitational pull and travel into space. The spacecraft can follow a parabolic or hyperbolic trajectory depending on its velocity.
+
+### 3.1. **Parabolic and Hyperbolic Trajectories and Escape**
+
+- **Parabolic Trajectory:** A parabolic trajectory occurs when the spacecraft's velocity is exactly equal to the escape velocity at a given point. This trajectory represents the minimum speed required for an object to escape Earth’s gravity. The spacecraft will move along a parabolic path, leaving Earth’s influence but never returning.
+- **Hyperbolic Trajectory:** A hyperbolic trajectory occurs when the spacecraft’s velocity exceeds the escape velocity. The spacecraft will escape Earth’s gravitational pull and follow a hyperbolic path, traveling far from Earth and never returning.
+  
+  $$ v_{\text{escape}} = \sqrt{\frac{2GM}{r}} $$
+
+  Where $v_{\text{escape}}$ is the escape velocity and $r$ is the distance from the center of the Earth.
+
+- **Example:** Space probes, such as those sent to Mars or the outer planets, follow parabolic or hyperbolic trajectories. They are launched with sufficient velocity to escape Earth’s gravity and travel to their target destinations. Similarly, the Apollo missions followed a hyperbolic trajectory to escape Earth's gravitational influence and travel to the Moon.
+
+### 3.2. **Key Points in Escape Scenarios:**
+- The spacecraft must reach or exceed the escape velocity to break free from Earth's gravitational pull.
+- Escape trajectories are typically used in interplanetary missions, where spacecraft need to travel to other planets, moons, or even other star systems.
+
+## 4. **Real-World Applications and Mission Planning**
+
+Understanding how the different types of trajectories relate to orbital insertion, reentry, and escape is crucial for successful space mission planning. Some real-world applications include:
+
+### 4.1. **Satellite Launches**
+- Satellites are typically inserted into elliptical orbits around Earth. The launch vehicle must achieve the correct velocity and altitude to ensure the satellite reaches the desired orbit. Satellites in geostationary orbit, for example, are placed in nearly circular orbits 35,786 km above the equator.
+
+### 4.2. **Space Probes and Interplanetary Missions**
+- Space probes, like the Mars rovers or Voyager probes, are launched with sufficient velocity to follow parabolic or hyperbolic trajectories, escaping Earth's gravity to reach other planets, moons, or even stars.
+
+### 4.3. **Spacecraft Reentry and Recovery**
+- Spacecraft like the Space Shuttle or modern crewed capsules (e.g., SpaceX's Dragon) need to follow controlled reentry trajectories to return safely to Earth. A controlled deorbit burn ensures that the spacecraft follows an elliptical trajectory that intersects the Earth's atmosphere for safe reentry.
+
