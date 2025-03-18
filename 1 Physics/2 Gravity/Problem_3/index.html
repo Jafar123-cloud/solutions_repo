@@ -172,6 +172,66 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="task-1-analyzing-the-possible-trajectories-of-a-payload-released-near-earth">Task 1 : Analyzing the Possible Trajectories of a Payload Released Near Earth</h1>
+<p>When an object is released from a moving rocket near Earth, its trajectory depends on the object's initial conditions (such as velocity and position) and the gravitational forces acting on it. Understanding the possible trajectories is essential for planning space missions, such as deploying payloads or returning objects to Earth. The possible trajectories of the object include parabolic, hyperbolic, and elliptical paths, all governed by the principles of orbital mechanics and gravitational forces.</p>
+<h2 id="1-keplers-laws-and-newtons-law-of-gravitation">1. <strong>Kepler's Laws and Newton's Law of Gravitation</strong></h2>
+<p>The motion of objects near Earth is primarily governed by the following principles:</p>
+<ul>
+<li><strong>Newton's Law of Gravitation</strong> states that the force of gravity between two objects is proportional to the product of their masses and inversely proportional to the square of the distance between them:</li>
+</ul>
+<p>$$ F = \frac{G M m}{r^2} $$</p>
+<p>Where:
+  - <span class="arithmatex">\(F\)</span> is the gravitational force,
+  - <span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span>),
+  - <span class="arithmatex">\(M\)</span> is the mass of the Earth,
+  - <span class="arithmatex">\(m\)</span> is the mass of the object,
+  - <span class="arithmatex">\(r\)</span> is the distance between the center of the Earth and the object.</p>
+<ul>
+<li><strong>Kepler's Laws of Planetary Motion</strong> describe the orbits of planets around the Sun. For objects near Earth, these laws can be applied to predict the trajectory, which can take various forms:</li>
+<li><strong>Elliptical Orbits:</strong> These are closed orbits where the object moves in an ellipse around the Earth.</li>
+<li><strong>Parabolic Trajectories:</strong> The object follows a path shaped like a parabola and will eventually escape Earth's gravitational pull if its speed is greater than the first cosmic velocity.</li>
+<li><strong>Hyperbolic Trajectories:</strong> The object follows a hyperbolic trajectory if its speed is greater than the second cosmic velocity, meaning it will escape Earth's gravity and travel away indefinitely.</li>
+</ul>
+<h2 id="2-types-of-trajectories">2. <strong>Types of Trajectories</strong></h2>
+<h3 id="21-elliptical-trajectory">2.1. <strong>Elliptical Trajectory</strong></h3>
+<p>An elliptical trajectory occurs when the object has less than the escape velocity but more than the orbital velocity (first cosmic velocity). The object will move in an elliptical orbit around Earth, eventually returning to its starting position unless disturbed by other forces.</p>
+<p>The equation for an elliptical orbit is given by the vis-viva equation:</p>
+<div class="arithmatex">\[ v = \sqrt{GM \left( \frac{2}{r} - \frac{1}{a} \right)} \]</div>
+<p>Where:
+- <span class="arithmatex">\(v\)</span> is the velocity of the object,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant,
+- <span class="arithmatex">\(M\)</span> is the mass of the Earth,
+- <span class="arithmatex">\(r\)</span> is the distance from the center of the Earth to the object,
+- <span class="arithmatex">\(a\)</span> is the semi-major axis of the ellipse.</p>
+<h3 id="22-parabolic-trajectory">2.2. <strong>Parabolic Trajectory</strong></h3>
+<p>A parabolic trajectory occurs when the object's velocity is exactly equal to the escape velocity at a given distance from Earth. In this case, the object will travel on a path shaped like a parabola, eventually escaping Earth's gravity but not returning.</p>
+<p>The escape velocity is given by:</p>
+<div class="arithmatex">\[ v_{\text{escape}} = \sqrt{\frac{2GM}{r}} \]</div>
+<p>Where:
+- <span class="arithmatex">\(v_{\text{escape}}\)</span> is the escape velocity,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant,
+- <span class="arithmatex">\(M\)</span> is the mass of the Earth,
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth to the object.</p>
+<h3 id="23-hyperbolic-trajectory">2.3. <strong>Hyperbolic Trajectory</strong></h3>
+<p>A hyperbolic trajectory occurs when the object's velocity is greater than the escape velocity. This trajectory is open and non-periodic, meaning the object will escape Earth's gravity and move away indefinitely, never returning.</p>
+<p>The equation for a hyperbolic trajectory is similar to that of an elliptical trajectory but with higher velocities and larger energy:</p>
+<div class="arithmatex">\[ v = \sqrt{GM \left( \frac{2}{r} - \frac{1}{b} \right)} \]</div>
+<p>Where:
+- <span class="arithmatex">\(v\)</span> is the velocity of the object,
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth,
+- <span class="arithmatex">\(b\)</span> is the distance of closest approach (a parameter describing the trajectory).</p>
+<h2 id="3-summary-of-trajectories">3. <strong>Summary of Trajectories</strong></h2>
+<ul>
+<li><strong>Elliptical Orbit</strong>: Occurs when the object's velocity is between the orbital and escape velocities. The object will remain in orbit around Earth.</li>
+<li><strong>Parabolic Trajectory</strong>: Occurs when the object's velocity is equal to the escape velocity. The object will escape Earth's gravity but will not return.</li>
+<li><strong>Hyperbolic Trajectory</strong>: Occurs when the object's velocity exceeds the escape velocity. The object will escape Earth's gravitational influence and travel away indefinitely.</li>
+</ul>
+<h2 id="4-real-world-applications">4. <strong>Real-World Applications</strong></h2>
+<ul>
+<li><strong>Satellite Deployment</strong>: Satellites are typically launched into elliptical orbits. The initial velocity of the payload determines whether it will enter a stable orbit or escape Earth's gravity entirely.</li>
+<li><strong>Space Probes</strong>: Space probes, like those sent to other planets, often follow parabolic or hyperbolic trajectories. They are given enough velocity to escape Earth's gravity and head toward their target destination, such as Mars or Jupiter.</li>
+<li><strong>Payloads Returning to Earth</strong>: If a payload needs to return to Earth, its trajectory must be carefully controlled to ensure it follows a parabolic or elliptical path, eventually re-entering the atmosphere.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
