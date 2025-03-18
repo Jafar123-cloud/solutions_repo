@@ -98,7 +98,7 @@ The range $R$ depends on two variables: the initial velocity $v_0$ and the angle
 By varying the initial velocity or launch angle, we obtain a family of solutions describing the projectile's behavior.
 
 
-# Analysis of the Range
+# Task 2: Analysis of the Range
 
 ## Investigating the Dependence of Range on Angle of Projection
 
