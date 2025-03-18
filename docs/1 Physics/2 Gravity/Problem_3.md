@@ -187,3 +187,106 @@ In this task, we will explore how the different types of trajectories — parabo
 
 - **Escape**: To escape Earth’s gravity, an object must reach a velocity greater than the escape velocity, leading to a **hyperbolic trajectory**. This trajectory ensures the object leaves Earth's gravitational pull entirely and continues into space.
 
+
+# Task 4: Develop a Computational Tool to Simulate and Visualize the Motion of the Payload Under Earth's Gravity
+
+In this task, we will develop a computational tool to simulate and visualize the motion of the payload under Earth's gravity, accounting for initial velocities and directions. The goal is to create a Python tool that can be used to simulate the trajectory of a payload released from a rocket, with the ability to modify initial conditions (position, velocity, and direction).
+
+## Approach and Tools
+
+To simulate the motion of the payload, we will:
+1. **Define initial conditions** for the position, velocity, and angle of release.
+2. **Use numerical methods** (such as Euler’s method or the Runge-Kutta method) to solve the equations of motion.
+3. **Visualize the trajectory** using **matplotlib** to plot the path of the payload.
+
+### Governing Equations
+As discussed in previous tasks, the motion of the payload is governed by Newton's law of gravitation. The position and velocity are updated over time according to:
+
+$$ \frac{d^2 \vec{r}}{dt^2} = -\frac{GM}{r^2} \hat{r} $$
+
+Where:
+- $\vec{r}$ is the position vector,
+- $r$ is the radial distance from Earth’s center,
+- $G$ is the gravitational constant,
+- $M$ is the mass of Earth,
+- $\hat{r}$ is the unit vector in the radial direction.
+
+### Key Components of the Tool
+The tool will include the following features:
+- **Initial Conditions Input**: The user can specify the altitude, velocity, and direction of the payload.
+- **Numerical Integration**: The equations of motion will be solved using numerical methods like the **Runge-Kutta method** for more accurate results.
+- **Visualization**: A graphical representation of the trajectory will be displayed, showing the path of the payload as it moves under Earth's gravity.
+
+### Python Code Implementation
+
+Below is the Python script that simulates and visualizes the motion of the payload:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Constants
+G = 6.67430e-11  # Gravitational constant in m^3 kg^-1 s^-2
+M = 5.972e24      # Mass of the Earth in kg
+R_earth = 6371000 # Radius of the Earth in meters
+
+# Function to define the equations of motion under gravity
+def equations_of_motion(t, state):
+    x, y, vx, vy = state
+    r = np.sqrt(x**2 + y**2)
+    ax = -G * M * x / r**3  # Gravitational acceleration in the x-direction
+    ay = -G * M * y / r**3  # Gravitational acceleration in the y-direction
+    return [vx, vy, ax, ay]
+
+# Function to simulate the motion
+def simulate_motion(altitude, velocity, angle, time_span=(0, 6000), num_points=1000):
+    # Initial position vector (radial distance from Earth's center)
+    r0 = R_earth + altitude
+    
+    # Initial velocity components
+    vx0 = velocity * np.cos(angle)
+    vy0 = velocity * np.sin(angle)
+    
+    # Initial state vector [x, y, vx, vy]
+    initial_state = [r0, 0, vx0, vy0]
+    
+    # Time points to evaluate the solution
+    t_eval = np.linspace(time_span[0], time_span[1], num_points)
+    
+    # Solve the system of differential equations
+    solution = solve_ivp(equations_of_motion, time_span, initial_state, t_eval=t_eval)
+    
+    return solution
+
+# Plotting function
+def plot_trajectory(solution):
+    # Extract the solution
+    x, y = solution.y[0], solution.y[1]
+    
+    # Plot the trajectory
+    plt.figure(figsize=(8, 8))
+    plt.plot(x, y, label="Payload Trajectory")
+    plt.scatter(0, 0, color='red', label="Earth's Center", s=100)
+    plt.title("Payload Trajectory Near Earth")
+    plt.xlabel("X position (m)")
+    plt.ylabel("Y position (m)")
+    plt.legend()
+    plt.axis('equal')
+    plt.grid(True)
+    plt.show()
+
+# Example usage
+if __name__ == "__main__":
+    # Define initial conditions (altitude in meters, velocity in m/s, angle in radians)
+    altitude = 100000  # Altitude above Earth's surface in meters
+    velocity = 7500     # Initial velocity in m/s (tangential)
+    angle = np.pi / 4   # Launch angle (45 degrees)
+
+    # Simulate the motion
+    solution = simulate_motion(altitude, velocity, angle)
+
+    # Plot the trajectory
+    plot_trajectory(solution)
+
+![alt text](image-5.png)
