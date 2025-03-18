@@ -288,5 +288,5 @@ if __name__ == "__main__":
 
     # Plot the trajectory
     plot_trajectory(solution)
-
+```
 ![alt text](image-3.png)
