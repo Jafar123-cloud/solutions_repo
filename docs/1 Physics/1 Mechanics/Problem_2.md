@@ -151,41 +151,56 @@ We use the **fourth-order Runge-Kutta (RK4) method** to solve these equations. T
 
 ### **Python Implementation**
 ```python
+# Import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-# Parameters
-g, L = 9.81, 1.0  # Gravity and pendulum length
-b = 0.2           # Damping coefficient
-A = 1.2           # Driving amplitude
-Omega = 2.0       # Driving frequency
-theta0, omega0 = 0.2, 0.0  # Initial conditions
-t_max, dt = 100, 0.01      # Simulation time
+# Define parameters
+g = 9.81  # Acceleration due to gravity (m/s^2)
+L = 1.0   # Length of the pendulum (m)
+b = 0.2   # Damping coefficient
+A = 1.2   # Driving amplitude
+Omega = 2.0  # Driving frequency (rad/s)
+theta0 = 0.2  # Initial angular displacement (rad)
+omega0 = 0.0  # Initial angular velocity (rad/s)
+t_max = 100   # Total simulation time (s)
+dt = 0.01     # Time step for evaluation (s)
 
-# Equations of motion
+# Define the system of differential equations
 def pendulum(t, y):
-    theta, omega = y
-    dtheta_dt = omega
-    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
+    theta, omega = y  # Unpack the state variables
+    dtheta_dt = omega  # dθ/dt = ω
+    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)  # dω/dt
     return [dtheta_dt, domega_dt]
 
-# Solve system
-t_span = (0, t_max)
-t_eval = np.arange(0, t_max, dt)
+# Solve the system using Runge-Kutta (RK45)
+t_span = (0, t_max)  # Time span for the simulation
+t_eval = np.arange(0, t_max, dt)  # Time points for evaluation
 sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')
 
-# Extract results
-theta, omega = sol.y
-t = sol.t
+# Extract the results
+theta = sol.y[0]  # Angular displacement (θ)
+omega = sol.y[1]  # Angular velocity (ω)
+t = sol.t         # Time array
 
-# Plot time evolution
+# Plot the time evolution of the angular displacement
 plt.figure(figsize=(10, 4))
-plt.plot(t, theta, label=r'$\theta(t)$')
-plt.xlabel('Time')
-plt.ylabel('Angular Displacement')
-plt.title('Time Evolution of the Forced Damped Pendulum')
-plt.legend()
-plt.grid()
+plt.plot(t, theta, label=r'$\theta(t)$', color='blue')
+plt.xlabel('Time (s)', fontsize=12)
+plt.ylabel('Angular Displacement (rad)', fontsize=12)
+plt.title('Time Evolution of the Forced Damped Pendulum', fontsize=14)
+plt.legend(fontsize=12)
+plt.grid(True)
+plt.show()
+
+# Optional: Plot the phase space (θ vs. ω)
+plt.figure(figsize=(6, 6))
+plt.plot(theta, omega, label='Phase Space', color='green')
+plt.xlabel(r'$\theta$ (rad)', fontsize=12)
+plt.ylabel(r'$\omega$ (rad/s)', fontsize=12)
+plt.title('Phase Space of the Forced Damped Pendulum', fontsize=14)
+plt.legend(fontsize=12)
+plt.grid(True)
 plt.show()
 ![alt text](image-2.png)
