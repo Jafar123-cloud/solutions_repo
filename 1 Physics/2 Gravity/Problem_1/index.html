@@ -285,25 +285,30 @@ T^2 \propto r^3
 <p>For circular orbits, we will simulate the motion of a satellite and calculate the orbital period for various orbital radii, using the above law. We can then compare the computed periods to the theoretical values to verify the relationship.</p>
 <h2 id="2-python-script-to-simulate-circular-orbits">2. <strong>Python Script to Simulate Circular Orbits</strong></h2>
 <p>Below is a Python script that simulates circular orbits for different orbital radii and calculates the orbital period based on Kepler's Third Law.</p>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="constants">Constants</h1>
-<p>G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
 M = 5.972e24     # Mass of Earth (kg)
-pi = np.pi</p>
-<h1 id="function-to-calculate-orbital-period-using-keplers-third-law">Function to calculate orbital period using Kepler's Third Law</h1>
-<p>def orbital_period(r):
+pi = np.pi
+
+# Function to calculate orbital period using Kepler's Third Law
+def orbital_period(r):
     T = 2 * pi * np.sqrt(r**3 / (G * M))  # Orbital period (seconds)
-    return T</p>
-<h1 id="range-of-orbital-radii-in-meters">Range of orbital radii (in meters)</h1>
-<p>radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km</p>
-<h1 id="calculate-the-orbital-periods-for-each-radius">Calculate the orbital periods for each radius</h1>
-<p>periods = orbital_period(radii)</p>
-<h1 id="convert-orbital-period-from-seconds-to-days">Convert orbital period from seconds to days</h1>
-<p>periods_days = periods / (60 * 60 * 24)</p>
-<h1 id="plot-the-relationship-between-orbital-period-and-orbital-radius">Plot the relationship between orbital period and orbital radius</h1>
-<p>plt.figure (figsize=(8, 6))
+    return T
+
+# Range of orbital radii (in meters)
+radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km
+
+# Calculate the orbital periods for each radius
+periods = orbital_period(radii)
+
+# Convert orbital period from seconds to days
+periods_days = periods / (60 * 60 * 24)
+
+# Plot the relationship between orbital period and orbital radius
+plt.figure (figsize=(8, 6))
 plt.plot (radii, periods_days, label='Orbital Period', color='b')
 plt.xlabel ('Orbital Radius (m)')
 plt.ylabel ('Orbital Period (days)')
@@ -311,7 +316,8 @@ plt.title ('Orbital Period vs Orbital Radius')
 plt. (True)
 plt.legend ()
 plt.show ()
-<img alt="alt text" src="../image.png"/></p>
+</code></pre>
+<p><img alt="alt text" src="../image.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
