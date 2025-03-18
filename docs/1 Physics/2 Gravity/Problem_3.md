@@ -140,7 +140,7 @@ plt.axis('equal')
 plt.grid(True)
 plt.show()
 
-![alt text](image-4.png)
+![alt text](image-2.png)
 
  # Task 3: Discuss How These Trajectories Relate to Orbital Insertion, Reentry, or Escape Scenarios
 
@@ -289,4 +289,4 @@ if __name__ == "__main__":
     # Plot the trajectory
     plot_trajectory(solution)
 
-![alt text](image-5.png)
+![alt text](image-3.png)
