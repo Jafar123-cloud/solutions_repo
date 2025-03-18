@@ -90,7 +90,7 @@ As damping ($b$) decreases, the resonance peak becomes sharper, meaning the syst
 ---
 
 
-# Practical Applications of the Forced Damped Pendulum
+# Task 3 : Practical Applications of the Forced Damped Pendulum
 
 The forced damped pendulum serves as a model for various real-world systems where periodic forces interact with damping and restoring forces.
 
