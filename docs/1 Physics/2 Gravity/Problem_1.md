@@ -96,7 +96,7 @@ $$
 This is Kepler's Third Law, which describes the relationship between the orbital period and the radius for objects in circular orbits around a massive central body.
 ---
 
-# Discussion on the Implications of Kepler's Third Law for Astronomy
+# Task 2 : Discussion on the Implications of Kepler's Third Law for Astronomy
 
 Kepler's Third Law, which relates the square of a planet's orbital period ($T$) to the cube of its orbital radius ($r$), has significant implications in the field of astronomy. This law helps astronomers determine various aspects of planetary systems, such as the masses of planets and the distances between celestial objects. 
 
@@ -126,3 +126,38 @@ $$ r^3 = \frac{G M T^2}{4 \pi^2} $$
 
 Knowing the orbital period ($T$) and the mass of the central body ($M$), the orbital radius ($r$) can be determined. This is particularly useful for calculating the distances between planets and their stars, or between moons and their planets.
 
+
+# Task 3 : Real-World Examples of Kepler's Third Law: The Moon and Planetary Orbits
+
+Kepler's Third Law, which describes the relationship between the orbital period and the orbital radius of a body, has real-world applications in understanding the motion of celestial bodies such as the Moon and the planets in the Solar System.
+
+## 1. **The Moon's Orbit Around Earth**
+
+The Moon orbits the Earth in an almost circular path, and its motion can be described using Kepler’s Third Law. The orbital period of the Moon is approximately 27.3 days, and its average orbital radius is about 384,400 km.
+
+Using Kepler's Third Law, we can calculate the mass of the Earth based on the Moon's orbital period and radius. We know the gravitational constant ($G$) and the orbital period ($T$) of the Moon, so we can use the following formula:
+
+$$ M = \frac{4 \pi^2 r^3}{G T^2} $$
+
+Where:
+- $r$ = 384,400 km (orbital radius of the Moon),
+- $T$ = 27.3 days = 2,358,720 seconds (orbital period of the Moon),
+- $G$ = $6.67430 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$ (gravitational constant).
+
+Plugging these values into the formula, we get the mass of the Earth. This calculation illustrates how Kepler's Third Law is used to determine the masses of celestial bodies.
+
+## 2. **The Orbits of Planets in the Solar System**
+
+Kepler's Third Law is also fundamental in understanding the orbits of planets around the Sun. For example, the orbital period of Earth is about 365.25 days, and the average distance from Earth to the Sun is about 149.6 million kilometers (1 AU). Using Kepler’s Third Law, we can compare the orbital characteristics of different planets in the Solar System.
+
+For example, the orbital period of Jupiter is 11.86 Earth years, and its average distance from the Sun is about 778.3 million kilometers. If we use Kepler’s Third Law to compare the orbital periods and radii of Earth and Jupiter, we can predict the orbital behavior of these planets based on their distances from the Sun.
+
+The formula for Kepler’s Third Law in this case is:
+
+$$ \frac{T_1^2}{r_1^3} = \frac{T_2^2}{r_2^3} $$
+
+Where:
+- $T_1$ and $r_1$ are the orbital period and radius of Earth,
+- $T_2$ and $r_2$ are the orbital period and radius of Jupiter.
+
+By substituting the known values for Earth and Jupiter, we can verify that Kepler's Third Law holds true across the Solar System and makes it possible to compare the motion of planets.
