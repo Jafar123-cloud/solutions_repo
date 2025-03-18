@@ -267,37 +267,30 @@ The following Python code simulates the motion of a payload under Earth’s grav
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Constants
 G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
 M = 5.972e24     # Mass of Earth (kg)
 R = 6371e3       # Radius of Earth (m)
 
-# Initial conditions: position, velocity, and direction
 initial_position = np.array([0, R + 100e3])  # Initial position: 100 km above Earth
 initial_velocity = np.array([7500, 0])      # Initial velocity: 7.5 km/s tangential (typical orbital velocity)
 
-# Time settings
 dt = 10          # Time step (seconds)
 total_time = 20000  # Total simulation time (seconds)
 steps = int(total_time / dt)
 
-# Arrays to store position and velocity over time
 position = np.zeros((steps, 2))
 velocity = np.zeros((steps, 2))
 position[0] = initial_position
 velocity[0] = initial_velocity
 
-# Numerical simulation using Euler's method
 for i in range(1, steps):
     r = np.linalg.norm(position[i-1])  # Distance from the center of Earth
     a = -G * M / r**2  # Radial acceleration (m/s^2)
     direction = position[i-1] / r  # Unit vector in the direction of the position
     
-    # Update velocity and position using Euler's method
     velocity[i] = velocity[i-1] + np.array([a * direction[0], a * direction[1]]) * dt
     position[i] = position[i-1] + velocity[i] * dt
 
-# Extract x and y positions for plotting
 x_position = position[:, 0]
 y_position = position[:, 1]
 
