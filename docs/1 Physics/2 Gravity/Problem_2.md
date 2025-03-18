@@ -134,3 +134,96 @@ The key parameters that affect all three cosmic velocities are:
 
 - **Gravitational Constant ($G$):** The gravitational constant is a universal factor that determines the strength of gravitational interactions between bodies. Its value affects all cosmic velocities in the same way.
 
+
+# Task 3 : Calculating and Visualizing Cosmic Velocities for Different Celestial Bodies
+
+In this task, we will calculate and visualize the first, second, and third cosmic velocities for different celestial bodies such as Earth, Mars, and Jupiter. The calculations will help us understand how the mass and radius of different planets and moons affect the required velocities for orbiting, escaping, and leaving their gravitational influence.
+
+## 1. **Cosmic Velocity Formulas**
+
+The formulas for the first, second, and third cosmic velocities are as follows:
+
+- **First Cosmic Velocity (Orbital Velocity):**
+  
+  $$ v_1 = \sqrt{\frac{GM}{r}} $$
+
+- **Second Cosmic Velocity (Escape Velocity):**
+  
+  $$ v_2 = \sqrt{\frac{2GM}{r}} $$
+
+- **Third Cosmic Velocity (Solar Escape Velocity):**
+  
+  $$ v_3 = \sqrt{\frac{2GM_{\text{sun}}}{r_{\text{sun}}}} $$
+
+Where:
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$),
+- $M$ is the mass of the celestial body,
+- $r$ is the radius of the celestial body,
+- $M_{\text{sun}}$ is the mass of the Sun ($1.989 \times 10^{30}$ kg),
+- $r_{\text{sun}}$ is the distance from the object to the Sun (in the case of escape velocity from the Sun).
+
+## 2. **Python Script to Calculate and Visualize Cosmic Velocities**
+
+The following Python script calculates and visualizes the first, second, and third cosmic velocities for Earth, Mars, and Jupiter.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M_sun = 1.989e30  # Mass of the Sun (kg)
+
+# Data for Earth, Mars, and Jupiter
+celestial_bodies = {
+    "Earth": {"mass": 5.972e24, "radius": 6.371e6, "distance_to_sun": 1.496e11},  # Earth
+    "Mars": {"mass": 0.64171e24, "radius": 3.396e6, "distance_to_sun": 2.279e11},  # Mars
+    "Jupiter": {"mass": 1.898e27, "radius": 6.991e7, "distance_to_sun": 7.785e11}  # Jupiter
+}
+
+# Function to calculate the first cosmic velocity (orbital velocity)
+def first_cosmic_velocity(mass, radius):
+    return np.sqrt(G * mass / radius)
+
+# Function to calculate the second cosmic velocity (escape velocity)
+def second_cosmic_velocity(mass, radius):
+    return np.sqrt(2 * G * mass / radius)
+
+# Function to calculate the third cosmic velocity (solar escape velocity)
+def third_cosmic_velocity(distance_to_sun):
+    return np.sqrt(2 * G * M_sun / distance_to_sun)
+
+# Calculate the velocities for each celestial body
+velocities = {}
+for body, data in celestial_bodies.items():
+    v1 = first_cosmic_velocity(data["mass"], data["radius"])  # First cosmic velocity
+    v2 = second_cosmic_velocity(data["mass"], data["radius"])  # Second cosmic velocity
+    v3 = third_cosmic_velocity(data["distance_to_sun"])  # Third cosmic velocity
+    velocities[body] = {"v1": v1, "v2": v2, "v3": v3}
+
+# Plot the velocities
+labels = list(celestial_bodies.keys())
+v1_values = [velocities[body]["v1"] / 1000 for body in labels]  # Convert m/s to km/s
+v2_values = [velocities[body]["v2"] / 1000 for body in labels]  # Convert m/s to km/s
+v3_values = [velocities[body]["v3"] / 1000 for body in labels]  # Convert m/s to km/s
+
+# Plotting
+x = np.arange(len(labels))
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+ax.bar(x - 0.2, v1_values, 0.6, label="First Cosmic Velocity (Orbital)")
+ax.bar(x, v2_values, 0.6, label="Second Cosmic Velocity (Escape)")
+ax.bar(x + 0.2, v3_values, 0.6, label="Third Cosmic Velocity (Solar Escape)")
+
+ax.set_xlabel('Celestial Bodies')
+ax.set_ylabel('Velocity (km/s)')
+ax.set_title('Cosmic Velocities for Earth, Mars, and Jupiter')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+plt.tight_layout()
+plt.show()
+![alt text](image-1.png)
+
