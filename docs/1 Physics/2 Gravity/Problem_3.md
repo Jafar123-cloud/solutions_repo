@@ -228,3 +228,88 @@ Understanding how the different types of trajectories relate to orbital insertio
 ### 4.3. **Spacecraft Reentry and Recovery**
 - Spacecraft like the Space Shuttle or modern crewed capsules (e.g., SpaceX's Dragon) need to follow controlled reentry trajectories to return safely to Earth. A controlled deorbit burn ensures that the spacecraft follows an elliptical trajectory that intersects the Earth's atmosphere for safe reentry.
 
+# Task 4 : Computational Tool to Simulate and Visualize Payload Motion Under Earth's Gravity
+
+In this task, we will develop a Python tool to simulate and visualize the motion of a payload under Earth's gravity. The motion will be computed based on the initial conditions, including position, velocity, and direction. We will use numerical methods to model the gravitational force and integrate the equations of motion to calculate the trajectory of the payload over time.
+
+## 1. **Problem Overview**
+
+When a payload is released from a moving rocket near Earth, its motion is influenced by gravitational forces. To simulate the motion, we need to calculate:
+- The acceleration due to gravity at each point.
+- The velocity and position of the payload at each time step.
+- The trajectory of the payload, based on different initial velocities and directions.
+
+## 2. **Equations of Motion**
+
+The motion of the payload is governed by Newton's Law of Gravitation and the second law of motion. The gravitational force $F$ acting on the payload is given by:
+
+$$ F = \frac{G M m}{r^2} $$
+
+Where:
+- $G$ is the gravitational constant,
+- $M$ is the mass of Earth,
+- $m$ is the mass of the payload,
+- $r$ is the distance between the payload and the center of the Earth.
+
+The acceleration due to gravity is:
+
+$$ a = \frac{F}{m} = \frac{G M}{r^2} $$
+
+The position and velocity of the payload at any given time can be updated using numerical integration methods (Euler's method or Runge-Kutta method). In this example, we will use Euler’s method for simplicity.
+
+## 3. **Python Script for Simulation**
+
+The following Python code simulates the motion of a payload under Earth’s gravity using Euler's method to numerically solve the equations of motion.
+
+### 3.1 **Code Implementation**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 5.972e24     # Mass of Earth (kg)
+R = 6371e3       # Radius of Earth (m)
+
+# Initial conditions: position, velocity, and direction
+initial_position = np.array([0, R + 100e3])  # Initial position: 100 km above Earth
+initial_velocity = np.array([7500, 0])      # Initial velocity: 7.5 km/s tangential (typical orbital velocity)
+
+# Time settings
+dt = 10          # Time step (seconds)
+total_time = 20000  # Total simulation time (seconds)
+steps = int(total_time / dt)
+
+# Arrays to store position and velocity over time
+position = np.zeros((steps, 2))
+velocity = np.zeros((steps, 2))
+position[0] = initial_position
+velocity[0] = initial_velocity
+
+# Numerical simulation using Euler's method
+for i in range(1, steps):
+    r = np.linalg.norm(position[i-1])  # Distance from the center of Earth
+    a = -G * M / r**2  # Radial acceleration (m/s^2)
+    direction = position[i-1] / r  # Unit vector in the direction of the position
+    
+    # Update velocity and position using Euler's method
+    velocity[i] = velocity[i-1] + np.array([a * direction[0], a * direction[1]]) * dt
+    position[i] = position[i-1] + velocity[i] * dt
+
+# Extract x and y positions for plotting
+x_position = position[:, 0]
+y_position = position[:, 1]
+
+# Plot the trajectory of the payload
+plt.figure(figsize=(8, 6))
+plt.plot(x_position, y_position, label='Payload Trajectory')
+plt.scatter(0, 0, color='red', label='Earth')  # Earth at the center
+plt.title('Trajectory of Payload Released Near Earth')
+plt.xlabel('Distance in x (m)')
+plt.ylabel('Distance in y (m)')
+plt.legend()
+plt.grid(True)
+plt.axis('equal')
+plt.show()
+![alt text](image-3.png)
