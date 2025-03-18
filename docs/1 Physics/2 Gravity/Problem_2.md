@@ -225,6 +225,7 @@ ax.legend()
 
 plt.tight_layout()
 plt.show()
+```
 ![alt text](image-1.png)
 
 # Task 4 : Importance of Cosmic Velocities in Space Exploration
