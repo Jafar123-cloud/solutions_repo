@@ -96,3 +96,37 @@ The range $R$ depends on two variables: the initial velocity $v_0$ and the angle
   - The range $R$ is a function of $\sin(2\theta)$. Therefore, the range will be maximized when $\theta = 45^\circ$, since $\sin(90^\circ) = 1$.
 
 By varying the initial velocity or launch angle, we obtain a family of solutions describing the projectile's behavior.
+
+
+# Analysis of the Range
+
+## Investigating the Dependence of Range on Angle of Projection
+
+The horizontal range $R$ of a projectile launched with an initial velocity $v_0$ at an angle $\theta$ is given by the standard kinematic equation:
+
+$$
+R = \frac{v_0^2 \sin(2\theta)}{g}
+$$
+
+where:
+- $v_0$ is the initial velocity,
+- $\theta$ is the angle of projection,
+- $g$ is the acceleration due to gravity.
+
+### Key Observations:
+1. **Effect of Angle ($\theta$):**
+   - The range is maximized when $\sin(2\theta) = 1$, which occurs at $\theta = 45^\circ$.
+   - For angles greater or smaller than $45^\circ$, the range decreases symmetrically.
+
+2. **Effect of Initial Velocity ($v_0$):**
+   - Since $R \propto v_0^2$, doubling the initial velocity results in a fourfold increase in range.
+
+3. **Effect of Gravitational Acceleration ($g$):**
+   - The range is inversely proportional to $g$, meaning a lower gravitational field (such as on the Moon) results in a longer range, while a higher gravitational field (such as on Jupiter) results in a shorter range.
+
+## Influence of Other Parameters
+
+- **Air Resistance:** The idealized equation assumes no air resistance. In reality, drag reduces the range, and the optimal angle shifts slightly below $45^\circ$.
+- **Altitude Variations:** Changes in $g$ due to altitude can affect the range.
+- **Wind Effects:** A tailwind increases range, while a headwind decreases it.
+
