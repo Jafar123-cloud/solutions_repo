@@ -272,6 +272,45 @@ T^2 \propto r^3
 - <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(r_1\)</span> are the orbital period and radius of Earth,
 - <span class="arithmatex">\(T_2\)</span> and <span class="arithmatex">\(r_2\)</span> are the orbital period and radius of Jupiter.</p>
 <p>By substituting the known values for Earth and Jupiter, we can verify that Kepler's Third Law holds true across the Solar System and makes it possible to compare the motion of planets.</p>
+<h1 id="task-4-implementing-a-computational-model-to-simulate-circular-orbits">Task 4 : Implementing a Computational Model to Simulate Circular Orbits</h1>
+<p>In this task, we will implement a computational model to simulate circular orbits and verify the relationship between the orbital period and the orbital radius, as described by Kepler's Third Law. We will write a Python script to simulate the motion of a satellite orbiting a central body and calculate its orbital period based on its radius.</p>
+<h2 id="1-keplers-third-law-and-circular-orbits">1. <strong>Kepler's Third Law and Circular Orbits</strong></h2>
+<p>Kepler's Third Law states that:</p>
+<div class="arithmatex">\[ T^2 = \frac{4 \pi^2 r^3}{G M} \]</div>
+<p>Where:
+- <span class="arithmatex">\(T\)</span> is the orbital period,
+- <span class="arithmatex">\(r\)</span> is the orbital radius,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant, and
+- <span class="arithmatex">\(M\)</span> is the mass of the central body.</p>
+<p>For circular orbits, we will simulate the motion of a satellite and calculate the orbital period for various orbital radii, using the above law. We can then compare the computed periods to the theoretical values to verify the relationship.</p>
+<h2 id="2-python-script-to-simulate-circular-orbits">2. <strong>Python Script to Simulate Circular Orbits</strong></h2>
+<p>Below is a Python script that simulates circular orbits for different orbital radii and calculates the orbital period based on Kepler's Third Law.</p>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="constants">Constants</h1>
+<p>G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 5.972e24     # Mass of Earth (kg)
+pi = np.pi</p>
+<h1 id="function-to-calculate-orbital-period-using-keplers-third-law">Function to calculate orbital period using Kepler's Third Law</h1>
+<p>def orbital_period(r):
+    T = 2 * pi * np.sqrt(r**3 / (G * M))  # Orbital period (seconds)
+    return T</p>
+<h1 id="range-of-orbital-radii-in-meters">Range of orbital radii (in meters)</h1>
+<p>radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km</p>
+<h1 id="calculate-the-orbital-periods-for-each-radius">Calculate the orbital periods for each radius</h1>
+<p>periods = orbital_period(radii)</p>
+<h1 id="convert-orbital-period-from-seconds-to-days">Convert orbital period from seconds to days</h1>
+<p>periods_days = periods / (60 * 60 * 24)</p>
+<h1 id="plot-the-relationship-between-orbital-period-and-orbital-radius">Plot the relationship between orbital period and orbital radius</h1>
+<p>plt.figure(figsize=(8, 6))
+plt.plot(radii, periods_days, label='Orbital Period', color='b')
+plt.xlabel('Orbital Radius (m)')
+plt.ylabel('Orbital Period (days)')
+plt.title('Orbital Period vs Orbital Radius')
+plt.grid(True)
+plt.legend()
+plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
