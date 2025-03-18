@@ -170,41 +170,37 @@ The idealized model of projectile motion assumes uniform gravitational accelerat
 
 
 
-# Task 4 : Implementation of Projectile Motion Simulation
-
-## Computational Simulation of Projectile Motion
-
-To better understand the relationship between the range and the angle of projection, we develop a Python-based simulation. This script models projectile motion, incorporating different initial velocities and gravitational conditions. The visualization will help analyze how these parameters affect the range.
-
-## Python Script for Simulation
-
-Below is a Python script that simulates projectile motion and plots the range as a function of the angle of projection.
-
-```python
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Constants
 g = 9.81  # Acceleration due to gravity (m/s^2)
-v0_values = [10, 20, 30]  # Different initial velocities (m/s)
-angles = np.linspace(0, 90, 100)  # Angle range from 0 to 90 degrees
 
-def compute_range(v0, theta):
-    """Compute the range of a projectile for a given initial velocity and angle."""
-    theta_rad = np.radians(theta)
-    return (v0 ** 2 * np.sin(2 * theta_rad)) / g
+# Function to calculate the range of a projectile
+def calculate_range(angle_deg, v0, g):
+    angle_rad = np.radians(angle_deg)  # Convert angle to radians
+    return (v0**2 * np.sin(2 * angle_rad)) / g
 
-# Plot range vs. angle for different initial velocities
-plt.figure(figsize=(8, 6))
+# Function to simulate and plot range vs angle for different initial velocities
+def simulate_projectile_motion(initial_velocities):
+    angles = np.linspace(0, 90, 100)  # Angles from 0° to 90°
+    
+    plt.figure(figsize=(10, 6))
+    
+    for v0 in initial_velocities:
+        ranges = [calculate_range(angle, v0, g) for angle in angles]
+        plt.plot(angles, ranges, label=f"v0 = {v0} m/s")
+    
+    plt.title("Range of a Projectile as a Function of Angle of Projection")
+    plt.xlabel("Angle of Projection (degrees)")
+    plt.ylabel("Range (meters)")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
-for v0 in v0_values:
-    ranges = [compute_range(v0, theta) for theta in angles]
-    plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
+# Initial velocities to test
+initial_velocities = [20, 40, 60, 80]  # Different initial velocities (m/s)
 
-plt.xlabel('Angle of Projection (degrees)')
-plt.ylabel('Range (m)')
-plt.title('Projectile Range as a Function of Angle')
-plt.legend()
-plt.grid(True)
-plt.show()
+# Run simulation
+simulate_projectile_motion(initial_velocities)
 ![alt text](image.png)
