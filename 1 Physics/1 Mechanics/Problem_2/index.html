@@ -288,39 +288,44 @@
 <h2 id="2-numerical-simulation">2. Numerical Simulation</h2>
 <p>We use the <strong>fourth-order Runge-Kutta (RK4) method</strong> to solve these equations. This approach ensures accurate integration of nonlinear dynamics.</p>
 <h3 id="python-implementation">Python Implementation</h3>
-<p>```python
-import numpy as np
+<pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp</p>
-<h1 id="parameters">Parameters</h1>
-<p>g, L = 9.81, 1.0  # Gravity and pendulum length
+from scipy.integrate import solve_ivp
+
+# Parameters
+g, L = 9.81, 1.0  # Gravity and pendulum length
 b = 0.2           # Damping coefficient
 A = 1.2           # Driving amplitude
 Omega = 2.0       # Driving frequency
 theta0, omega0 = 0.2, 0.0  # Initial conditions
-t_max, dt = 100, 0.01      # Simulation time</p>
-<h1 id="equations-of-motion">Equations of motion</h1>
-<p>def pendulum(t, y):
+t_max, dt = 100, 0.01      # Simulation time
+
+# Equations of motion
+def pendulum(t, y):
     theta, omega = y
     dtheta_dt = omega
     domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
-    return [dtheta_dt, domega_dt]</p>
-<h1 id="solve-system">Solve system</h1>
-<p>t_span = (0, t_max)
+    return [dtheta_dt, domega_dt]
+
+# Solve system
+t_span = (0, t_max)
 t_eval = np.arange(0, t_max, dt)
-sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')</p>
-<h1 id="extract-results">Extract results</h1>
-<p>theta, omega = sol.y
-t = sol.t</p>
-<h1 id="plot-time-evolution">Plot time evolution</h1>
-<p>plt.figure(figsize=(10, 4))
-plt.plot(t, theta, label=r'<span class="arithmatex">\(\theta(t)\)</span>')
+sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')
+
+# Extract results
+theta, omega = sol.y
+t = sol.t
+
+# Plot time evolution
+plt.figure(figsize=(10, 4))
+plt.plot(t, theta, label=r'$\theta(t)$')
 plt.xlabel('Time')
 plt.ylabel('Angular Displacement')
 plt.title('Time Evolution of the Forced Damped Pendulum')
 plt.legend()
 plt.grid()
-plt.show()</p>
+plt.show()
+</code></pre>
 <p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
