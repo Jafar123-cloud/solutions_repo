@@ -116,3 +116,76 @@ The forced damped pendulum serves as a model for various real-world systems wher
 
 ---
 
+# Task 4: Implementation: Simulating the Forced Damped Pendulum
+
+To understand the complex behavior of the forced damped pendulum, we implement a computational model using Python. This model solves the equation of motion numerically and visualizes key dynamical features.
+
+## 1. Governing Equation
+
+The equation describing the motion is:
+
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A\cos(\omega t)
+$$
+
+Rewriting as a system of first-order differential equations:
+
+$$
+\frac{d\theta}{dt} = \omega
+$$
+
+$$
+\frac{d\omega}{dt} = -b\omega - \frac{g}{L} \sin\theta + A\cos(\Omega t)
+$$
+
+where:
+- $\theta$ is the angular displacement,
+- $\omega$ is the angular velocity,
+- $b$ is the damping coefficient,
+- $A$ is the driving amplitude,
+- $\Omega$ is the driving frequency.
+
+## 2. Numerical Simulation
+
+We use the **fourth-order Runge-Kutta (RK4) method** to solve these equations. This approach ensures accurate integration of nonlinear dynamics.
+
+### **Python Implementation**
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Parameters
+g, L = 9.81, 1.0  # Gravity and pendulum length
+b = 0.2           # Damping coefficient
+A = 1.2           # Driving amplitude
+Omega = 2.0       # Driving frequency
+theta0, omega0 = 0.2, 0.0  # Initial conditions
+t_max, dt = 100, 0.01      # Simulation time
+
+# Equations of motion
+def pendulum(t, y):
+    theta, omega = y
+    dtheta_dt = omega
+    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
+    return [dtheta_dt, domega_dt]
+
+# Solve system
+t_span = (0, t_max)
+t_eval = np.arange(0, t_max, dt)
+sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')
+
+# Extract results
+theta, omega = sol.y
+t = sol.t
+
+# Plot time evolution
+plt.figure(figsize=(10, 4))
+plt.plot(t, theta, label=r'$\theta(t)$')
+plt.xlabel('Time')
+plt.ylabel('Angular Displacement')
+plt.title('Time Evolution of the Forced Damped Pendulum')
+plt.legend()
+plt.grid()
+plt.show()
+![alt text](image-2.png)
