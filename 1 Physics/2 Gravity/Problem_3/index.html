@@ -341,6 +341,92 @@ plt.show()</p>
 <p><strong>Escape</strong>: To escape Earth’s gravity, an object must reach a velocity greater than the escape velocity, leading to a <strong>hyperbolic trajectory</strong>. This trajectory ensures the object leaves Earth's gravitational pull entirely and continues into space.</p>
 </li>
 </ul>
+<h1 id="task-4-develop-a-computational-tool-to-simulate-and-visualize-the-motion-of-the-payload-under-earths-gravity">Task 4: Develop a Computational Tool to Simulate and Visualize the Motion of the Payload Under Earth's Gravity</h1>
+<p>In this task, we will develop a computational tool to simulate and visualize the motion of the payload under Earth's gravity, accounting for initial velocities and directions. The goal is to create a Python tool that can be used to simulate the trajectory of a payload released from a rocket, with the ability to modify initial conditions (position, velocity, and direction).</p>
+<h2 id="approach-and-tools">Approach and Tools</h2>
+<p>To simulate the motion of the payload, we will:
+1. <strong>Define initial conditions</strong> for the position, velocity, and angle of release.
+2. <strong>Use numerical methods</strong> (such as Euler’s method or the Runge-Kutta method) to solve the equations of motion.
+3. <strong>Visualize the trajectory</strong> using <strong>matplotlib</strong> to plot the path of the payload.</p>
+<h3 id="governing-equations_1">Governing Equations</h3>
+<p>As discussed in previous tasks, the motion of the payload is governed by Newton's law of gravitation. The position and velocity are updated over time according to:</p>
+<div class="arithmatex">\[ \frac{d^2 \vec{r}}{dt^2} = -\frac{GM}{r^2} \hat{r} \]</div>
+<p>Where:
+- <span class="arithmatex">\(\vec{r}\)</span> is the position vector,
+- <span class="arithmatex">\(r\)</span> is the radial distance from Earth’s center,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant,
+- <span class="arithmatex">\(M\)</span> is the mass of Earth,
+- <span class="arithmatex">\(\hat{r}\)</span> is the unit vector in the radial direction.</p>
+<h3 id="key-components-of-the-tool">Key Components of the Tool</h3>
+<p>The tool will include the following features:
+- <strong>Initial Conditions Input</strong>: The user can specify the altitude, velocity, and direction of the payload.
+- <strong>Numerical Integration</strong>: The equations of motion will be solved using numerical methods like the <strong>Runge-Kutta method</strong> for more accurate results.
+- <strong>Visualization</strong>: A graphical representation of the trajectory will be displayed, showing the path of the payload as it moves under Earth's gravity.</p>
+<h3 id="python-code-implementation">Python Code Implementation</h3>
+<p>Below is the Python script that simulates and visualizes the motion of the payload:</p>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp</p>
+<h1 id="constants_1">Constants</h1>
+<p>G = 6.67430e-11  # Gravitational constant in m^3 kg^-1 s^-2
+M = 5.972e24      # Mass of the Earth in kg
+R_earth = 6371000 # Radius of the Earth in meters</p>
+<h1 id="function-to-define-the-equations-of-motion-under-gravity">Function to define the equations of motion under gravity</h1>
+<p>def equations_of_motion(t, state):
+    x, y, vx, vy = state
+    r = np.sqrt(x<strong>2 + y</strong>2)
+    ax = -G * M * x / r<strong>3  # Gravitational acceleration in the x-direction
+    ay = -G * M * y / r</strong>3  # Gravitational acceleration in the y-direction
+    return [vx, vy, ax, ay]</p>
+<h1 id="function-to-simulate-the-motion">Function to simulate the motion</h1>
+<p>def simulate_motion(altitude, velocity, angle, time_span=(0, 6000), num_points=1000):
+    # Initial position vector (radial distance from Earth's center)
+    r0 = R_earth + altitude</p>
+<pre><code># Initial velocity components
+vx0 = velocity * np.cos(angle)
+vy0 = velocity * np.sin(angle)
+
+# Initial state vector [x, y, vx, vy]
+initial_state = [r0, 0, vx0, vy0]
+
+# Time points to evaluate the solution
+t_eval = np.linspace(time_span[0], time_span[1], num_points)
+
+# Solve the system of differential equations
+solution = solve_ivp(equations_of_motion, time_span, initial_state, t_eval=t_eval)
+
+return solution
+</code></pre>
+<h1 id="plotting-function">Plotting function</h1>
+<p>def plot_trajectory(solution):
+    # Extract the solution
+    x, y = solution.y[0], solution.y[1]</p>
+<pre><code># Plot the trajectory
+plt.figure(figsize=(8, 8))
+plt.plot(x, y, label="Payload Trajectory")
+plt.scatter(0, 0, color='red', label="Earth's Center", s=100)
+plt.title("Payload Trajectory Near Earth")
+plt.xlabel("X position (m)")
+plt.ylabel("Y position (m)")
+plt.legend()
+plt.axis('equal')
+plt.grid(True)
+plt.show()
+</code></pre>
+<h1 id="example-usage">Example usage</h1>
+<p>if <strong>name</strong> == "<strong>main</strong>":
+    # Define initial conditions (altitude in meters, velocity in m/s, angle in radians)
+    altitude = 100000  # Altitude above Earth's surface in meters
+    velocity = 7500     # Initial velocity in m/s (tangential)
+    angle = np.pi / 4   # Launch angle (45 degrees)</p>
+<pre><code># Simulate the motion
+solution = simulate_motion(altitude, velocity, angle)
+
+# Plot the trajectory
+plot_trajectory(solution)
+</code></pre>
+<p><img alt="alt text" src="../image-5.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
