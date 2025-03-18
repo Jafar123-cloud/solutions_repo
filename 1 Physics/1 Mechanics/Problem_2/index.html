@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Theoretical Foundation: Forced Damped Pendulum - Physics and Mathematics</title>
+<title>Problem 2 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Theoretical Foundation: Forced Damped Pendulum";
+        var mkdocs_page_name = "Problem 2";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -48,14 +48,8 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Theoretical Foundation: Forced Damped Pendulum</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#governing-equation">Governing Equation</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#resonance-condition">Resonance Condition</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -169,7 +163,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Theoretical Foundation: Forced Damped Pendulum</li>
+<li class="breadcrumb-item active">Problem 2</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -177,37 +171,71 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="theoretical-foundation-forced-damped-pendulum">Theoretical Foundation: Forced Damped Pendulum</h1>
+<h1 id="problem-2">Problem 2</h1>
+<h1 id="task-1-theoretical-foundation-forced-damped-pendulum">Task 1: Theoretical Foundation: Forced Damped Pendulum</h1>
 <h2 id="governing-equation">Governing Equation</h2>
-<p>The motion is described by:</p>
+<p>The motion of a forced damped pendulum is governed by the following second-order nonlinear differential equation:</p>
 <div class="arithmatex">\[
 \frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A\cos(\omega t)
 \]</div>
-<p>For small angles (<span class="arithmatex">\(\sin\theta \approx \theta\)</span>), this simplifies to:</p>
+<p>where:<br/>
+- <span class="arithmatex">\(\theta\)</span> is the angular displacement,<br/>
+- <span class="arithmatex">\(b\)</span> is the damping coefficient,<br/>
+- <span class="arithmatex">\(g\)</span> is the acceleration due to gravity,<br/>
+- <span class="arithmatex">\(L\)</span> is the length of the pendulum,<br/>
+- <span class="arithmatex">\(A\)</span> is the amplitude of the external driving force,<br/>
+- <span class="arithmatex">\(\omega\)</span> is the driving frequency,<br/>
+- <span class="arithmatex">\(t\)</span> is time.</p>
+<h2 id="small-angle-approximation">Small-Angle Approximation</h2>
+<p>For small angles, we use the approximation:</p>
+<div class="arithmatex">\[
+\sin\theta \approx \theta
+\]</div>
+<p>Substituting this into the equation simplifies it to:</p>
 <div class="arithmatex">\[
 \frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A\cos(\omega t)
 \]</div>
-<h2 id="solution">Solution</h2>
-<p>The general solution consists of:</p>
+<p>This is a linear, non-homogeneous differential equation, which can be solved using the method of undetermined coefficients or by considering the system's natural and forced response.</p>
+<h3 id="general-solution">General Solution</h3>
+<p>The solution consists of two parts:  </p>
 <ol>
-<li><strong>Homogeneous solution</strong> (natural response):</li>
+<li><strong>Homogeneous solution</strong> (solution to the undriven equation):</li>
 </ol>
 <p>$$
-   \theta_h(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t}, \quad r^2 + br + \frac{g}{L} = 0
+   \theta_h(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t}
+   $$</p>
+<p>where <span class="arithmatex">\(r_1\)</span> and <span class="arithmatex">\(r_2\)</span> are the roots of the characteristic equation:</p>
+<p>$$
+   r^2 + br + \frac{g}{L} = 0
    $$</p>
 <ol>
-<li><strong>Particular solution</strong> (steady-state response):</li>
+<li><strong>Particular solution</strong> (steady-state response due to the driving force):</li>
 </ol>
 <p>$$
    \theta_p(t) = \Theta_0 \cos(\omega t - \delta)
    $$</p>
-<p>For long times, transient terms vanish, leaving only <span class="arithmatex">\(\theta_p(t)\)</span>.</p>
+<p>where <span class="arithmatex">\(\Theta_0\)</span> is the amplitude of oscillation, and <span class="arithmatex">\(\delta\)</span> is the phase shift.</p>
+<p>The full solution is:</p>
+<div class="arithmatex">\[
+\theta(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t} + \Theta_0 \cos(\omega t - \delta)
+\]</div>
+<p>For long times (<span class="arithmatex">\(t \to \infty\)</span>), the transient terms (<span class="arithmatex">\(C_1 e^{r_1 t} + C_2 e^{r_2 t}\)</span>) vanish due to damping, leaving only the steady-state oscillation.</p>
 <h2 id="resonance-condition">Resonance Condition</h2>
-<p>Resonance occurs when <span class="arithmatex">\(\omega = \sqrt{g/L}\)</span>, leading to maximum amplitude:</p>
+<p>Resonance occurs when the driving frequency <span class="arithmatex">\(\omega\)</span> matches the system's natural frequency:</p>
+<div class="arithmatex">\[
+\omega_0 = \sqrt{\frac{g}{L}}
+\]</div>
+<p>At resonance, the amplitude <span class="arithmatex">\(\Theta_0\)</span> of oscillations reaches a maximum:</p>
 <div class="arithmatex">\[
 \Theta_0 = \frac{A}{\sqrt{(\omega_0^2 - \omega^2)^2 + (b\omega)^2}}
 \]</div>
-<p>As damping <span class="arithmatex">\(b\)</span> decreases, oscillations grow sharper, seen in real-world systems like bridges and RLC circuits.</p>
+<p>As damping (<span class="arithmatex">\(b\)</span>) decreases, the resonance peak becomes sharper, meaning the system absorbs more energy from the driving force.</p>
+<h3 id="implications-of-resonance">Implications of Resonance</h3>
+<ul>
+<li>At resonance, the pendulum oscillates with large amplitude, potentially leading to chaotic motion for large angles.</li>
+<li>In real systems, excessive oscillations may lead to structural failure (e.g., bridges, buildings).</li>
+<li>Similar behavior is seen in electrical RLC circuits, where resonance maximizes current.</li>
+</ul>
 <hr/>
 </div>
 </div><footer>
