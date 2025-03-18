@@ -116,7 +116,7 @@ The forced damped pendulum serves as a model for various real-world systems wher
 
 ---
 
-# Task 4: Implementation: Simulating the Forced Damped Pendulum
+# Task 4 : Implementation: Simulating the Forced Damped Pendulum
 
 To understand the complex behavior of the forced damped pendulum, we implement a computational model using Python. This model solves the equation of motion numerically and visualizes key dynamical features.
 
@@ -149,48 +149,45 @@ where:
 
 We use the **fourth-order Runge-Kutta (RK4) method** to solve these equations. This approach ensures accurate integration of nonlinear dynamics.
 
-### **Python Implementation**
+### Python Implementation
+
 ```python
-# Import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-# Define parameters
-g = 9.81  # Acceleration due to gravity (m/s^2)
-L = 1.0   # Length of the pendulum (m)
-b = 0.2   # Damping coefficient
-A = 1.2   # Driving amplitude
-Omega = 2.0  # Driving frequency (rad/s)
-theta0 = 0.2  # Initial angular displacement (rad)
-omega0 = 0.0  # Initial angular velocity (rad/s)
-t_max = 100   # Total simulation time (s)
-dt = 0.01     # Time step for evaluation (s)
+# Parameters
+g, L = 9.81, 1.0  # Gravity and pendulum length
+b = 0.2           # Damping coefficient
+A = 1.2           # Driving amplitude
+Omega = 2.0       # Driving frequency
+theta0, omega0 = 0.2, 0.0  # Initial conditions
+t_max, dt = 100, 0.01      # Simulation time
 
-# Define the system of differential equations
+# Equations of motion
 def pendulum(t, y):
-    theta, omega = y  # Unpack the state variables
-    dtheta_dt = omega  # dθ/dt = ω
-    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)  # dω/dt
+    theta, omega = y
+    dtheta_dt = omega
+    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
     return [dtheta_dt, domega_dt]
 
-# Solve the system using Runge-Kutta (RK45)
-t_span = (0, t_max)  # Time span for the simulation
-t_eval = np.arange(0, t_max, dt)  # Time points for evaluation
+# Solve system
+t_span = (0, t_max)
+t_eval = np.arange(0, t_max, dt)
 sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')
 
-# Extract the results
-theta = sol.y[0]  # Angular displacement (θ)
-omega = sol.y[1]  # Angular velocity (ω)
-t = sol.t         # Time array
+# Extract results
+theta, omega = sol.y
+t = sol.t
 
-# Plot the time evolution of the angular displacement
+# Plot time evolution
 plt.figure(figsize=(10, 4))
-plt.plot(t, theta, label=r'$\theta(t)$', color='blue')
-plt.xlabel('Time (s)', fontsize=12)
-plt.ylabel('Angular Displacement (rad)', fontsize=12)
-plt.title('Time Evolution of the Forced Damped Pendulum', fontsize=14)
-plt.legend(fontsize=12)
-plt.grid(True)
+plt.plot(t, theta, label=r'$\theta(t)$')
+plt.xlabel('Time')
+plt.ylabel('Angular Displacement')
+plt.title('Time Evolution of the Forced Damped Pendulum')
+plt.legend()
+plt.grid()
 plt.show()
+
 ![alt text](image-2.png)
