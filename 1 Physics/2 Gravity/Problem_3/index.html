@@ -415,7 +415,6 @@ position[i] = position[i-1] + velocity[i] * dt
 <h1 id="extract-x-and-y-positions-for-plotting_1">Extract x and y positions for plotting</h1>
 <p>x_position = position[:, 0]
 y_position = position[:, 1]</p>
-<h1 id="plot-the-trajectory-of-the-payload_1">Plot the trajectory of the payload</h1>
 <p>plt.figure(figsize=(8, 6))
 plt.plot(x_position, y_position, label='Payload Trajectory')
 plt.scatter(0, 0, color='red', label='Earth')  # Earth at the center
