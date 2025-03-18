@@ -301,7 +301,7 @@ for i in range(1, steps):
 x_position = position[:, 0]
 y_position = position[:, 1]
 
-# Plot the trajectory of the payload
+
 plt.figure(figsize=(8, 6))
 plt.plot(x_position, y_position, label='Payload Trajectory')
 plt.scatter(0, 0, color='red', label='Earth')  # Earth at the center
@@ -312,5 +312,6 @@ plt.legend()
 plt.grid(True)
 plt.axis('equal')
 plt.show()
+
 
 ![alt text](image-3.png)
