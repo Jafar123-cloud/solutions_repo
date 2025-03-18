@@ -142,8 +142,7 @@ plt.show()
 
 ![alt text](image-4.png)
 
-
-# Task 3: Discuss How These Trajectories Relate to Orbital Insertion, Reentry, or Escape Scenarios
+ # Task 3: Discuss How These Trajectories Relate to Orbital Insertion, Reentry, or Escape Scenarios
 
 In this task, we will explore how the different types of trajectories — parabolic, hyperbolic, and elliptical — relate to key space mission concepts, such as **orbital insertion**, **reentry**, and **escape**.
 
