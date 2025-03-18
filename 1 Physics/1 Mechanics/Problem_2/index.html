@@ -265,7 +265,7 @@
 <li>Studying these dynamics helps in prosthetic design and rehabilitation.</li>
 </ul>
 <hr/>
-<h1 id="task-4-implementation-simulating-the-forced-damped-pendulum">Task 4: Implementation: Simulating the Forced Damped Pendulum</h1>
+<h1 id="task-4-implementation-simulating-the-forced-damped-pendulum">Task 4 : Implementation: Simulating the Forced Damped Pendulum</h1>
 <p>To understand the complex behavior of the forced damped pendulum, we implement a computational model using Python. This model solves the equation of motion numerically and visualizes key dynamical features.</p>
 <h2 id="1-governing-equation">1. Governing Equation</h2>
 <p>The equation describing the motion is:</p>
@@ -287,46 +287,41 @@
 - <span class="arithmatex">\(\Omega\)</span> is the driving frequency.</p>
 <h2 id="2-numerical-simulation">2. Numerical Simulation</h2>
 <p>We use the <strong>fourth-order Runge-Kutta (RK4) method</strong> to solve these equations. This approach ensures accurate integration of nonlinear dynamics.</p>
-<h3 id="python-implementation"><strong>Python Implementation</strong></h3>
-<p>```python</p>
-<h1 id="import-necessary-libraries">Import necessary libraries</h1>
-<p>import numpy as np
+<h3 id="python-implementation">Python Implementation</h3>
+<p>```python
+import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp</p>
-<h1 id="define-parameters">Define parameters</h1>
-<p>g = 9.81  # Acceleration due to gravity (m/s^2)
-L = 1.0   # Length of the pendulum (m)
-b = 0.2   # Damping coefficient
-A = 1.2   # Driving amplitude
-Omega = 2.0  # Driving frequency (rad/s)
-theta0 = 0.2  # Initial angular displacement (rad)
-omega0 = 0.0  # Initial angular velocity (rad/s)
-t_max = 100   # Total simulation time (s)
-dt = 0.01     # Time step for evaluation (s)</p>
-<h1 id="define-the-system-of-differential-equations">Define the system of differential equations</h1>
+<h1 id="parameters">Parameters</h1>
+<p>g, L = 9.81, 1.0  # Gravity and pendulum length
+b = 0.2           # Damping coefficient
+A = 1.2           # Driving amplitude
+Omega = 2.0       # Driving frequency
+theta0, omega0 = 0.2, 0.0  # Initial conditions
+t_max, dt = 100, 0.01      # Simulation time</p>
+<h1 id="equations-of-motion">Equations of motion</h1>
 <p>def pendulum(t, y):
-    theta, omega = y  # Unpack the state variables
-    dtheta_dt = omega  # dθ/dt = ω
-    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)  # dω/dt
+    theta, omega = y
+    dtheta_dt = omega
+    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
     return [dtheta_dt, domega_dt]</p>
-<h1 id="solve-the-system-using-runge-kutta-rk45">Solve the system using Runge-Kutta (RK45)</h1>
-<p>t_span = (0, t_max)  # Time span for the simulation
-t_eval = np.arange(0, t_max, dt)  # Time points for evaluation
+<h1 id="solve-system">Solve system</h1>
+<p>t_span = (0, t_max)
+t_eval = np.arange(0, t_max, dt)
 sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')</p>
-<h1 id="extract-the-results">Extract the results</h1>
-<p>theta = sol.y[0]  # Angular displacement (θ)
-omega = sol.y[1]  # Angular velocity (ω)
-t = sol.t         # Time array</p>
-<h1 id="plot-the-time-evolution-of-the-angular-displacement">Plot the time evolution of the angular displacement</h1>
+<h1 id="extract-results">Extract results</h1>
+<p>theta, omega = sol.y
+t = sol.t</p>
+<h1 id="plot-time-evolution">Plot time evolution</h1>
 <p>plt.figure(figsize=(10, 4))
-plt.plot(t, theta, label=r'<span class="arithmatex">\(\theta(t)\)</span>', color='blue')
-plt.xlabel('Time (s)', fontsize=12)
-plt.ylabel('Angular Displacement (rad)', fontsize=12)
-plt.title('Time Evolution of the Forced Damped Pendulum', fontsize=14)
-plt.legend(fontsize=12)
-plt.grid(True)
-plt.show()
-<img alt="alt text" src="../image-2.png"/></p>
+plt.plot(t, theta, label=r'<span class="arithmatex">\(\theta(t)\)</span>')
+plt.xlabel('Time')
+plt.ylabel('Angular Displacement')
+plt.title('Time Evolution of the Forced Damped Pendulum')
+plt.legend()
+plt.grid()
+plt.show()</p>
+<p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
