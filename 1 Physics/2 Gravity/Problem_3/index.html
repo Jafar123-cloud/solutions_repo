@@ -387,32 +387,25 @@ plt.show()
 <p>```python
 import numpy as np
 import matplotlib.pyplot as plt</p>
-<h1 id="constants_1">Constants</h1>
 <p>G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
 M = 5.972e24     # Mass of Earth (kg)
 R = 6371e3       # Radius of Earth (m)</p>
-<h1 id="initial-conditions-position-velocity-and-direction">Initial conditions: position, velocity, and direction</h1>
 <p>initial_position = np.array([0, R + 100e3])  # Initial position: 100 km above Earth
 initial_velocity = np.array([7500, 0])      # Initial velocity: 7.5 km/s tangential (typical orbital velocity)</p>
-<h1 id="time-settings_1">Time settings</h1>
 <p>dt = 10          # Time step (seconds)
 total_time = 20000  # Total simulation time (seconds)
 steps = int(total_time / dt)</p>
-<h1 id="arrays-to-store-position-and-velocity-over-time_1">Arrays to store position and velocity over time</h1>
 <p>position = np.zeros((steps, 2))
 velocity = np.zeros((steps, 2))
 position[0] = initial_position
 velocity[0] = initial_velocity</p>
-<h1 id="numerical-simulation-using-eulers-method_1">Numerical simulation using Euler's method</h1>
 <p>for i in range(1, steps):
     r = np.linalg.norm(position[i-1])  # Distance from the center of Earth
     a = -G * M / r**2  # Radial acceleration (m/s^2)
     direction = position[i-1] / r  # Unit vector in the direction of the position</p>
-<pre><code># Update velocity and position using Euler's method
-velocity[i] = velocity[i-1] + np.array([a * direction[0], a * direction[1]]) * dt
+<pre><code>velocity[i] = velocity[i-1] + np.array([a * direction[0], a * direction[1]]) * dt
 position[i] = position[i-1] + velocity[i] * dt
 </code></pre>
-<h1 id="extract-x-and-y-positions-for-plotting_1">Extract x and y positions for plotting</h1>
 <p>x_position = position[:, 0]
 y_position = position[:, 1]</p>
 <p>plt.figure(figsize=(8, 6))
