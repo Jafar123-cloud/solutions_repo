@@ -238,3 +238,21 @@ plt.grid(True)
 plt.show()
 ```
 ![alt text](image-4.png)
+
+```
+from mpl_toolkits.mplot3d import Axes3D
+
+theta = np.linspace(0, 2*np.pi, 100)
+r = 7e6  # LEO radius
+x = r * np.cos(theta)
+y = r * np.sin(theta)
+z = np.zeros_like(x)
+
+fig = plt.figure(figsize=(8,6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x, y, z, 'b-')
+ax.scatter([0], [0], [0], color='g', s=100)
+ax.set_title('Circular Orbit Visualization')
+plt.show()
+```
+![alt text](image-5.png)
