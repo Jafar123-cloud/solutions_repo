@@ -299,57 +299,58 @@ plt.grid(True)
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-2.png"/></p>
-<p># Task 3: Discuss How These Trajectories Relate to Orbital Insertion, Reentry, or Escape Scenarios</p>
-<p>In this task, we will explore how the different types of trajectories — parabolic, hyperbolic, and elliptical — relate to key space mission concepts, such as <strong>orbital insertion</strong>, <strong>reentry</strong>, and <strong>escape</strong>.</p>
-<h2 id="orbital-insertion">Orbital Insertion</h2>
-<p><strong>Orbital insertion</strong> refers to the process of placing a spacecraft into orbit around a celestial body, like Earth. The goal is to ensure that the spacecraft achieves a stable, predictable path around the Earth.</p>
-<ul>
-<li><strong>Elliptical Trajectory and Orbital Insertion</strong>:</li>
-<li>If the payload is released with the correct velocity (greater than the escape velocity but less than the speed for a circular orbit), the object follows an <strong>elliptical orbit</strong> around Earth.</li>
-<li>Orbital insertion typically requires the payload to have the right tangential velocity so that its path bends into a stable elliptical orbit. This path eventually reaches a <strong>perigee</strong> (closest point to Earth) and <strong>apogee</strong> (farthest point from Earth), and the spacecraft can circle Earth in a predictable manner.</li>
-<li>
-<p>For a spacecraft to enter a circular orbit (which is common for many satellite missions), the object must adjust its velocity at certain points, typically near the apogee, to make its orbit circular.</p>
-</li>
-<li>
-<p><strong>Example</strong>: A satellite launched from Earth with a velocity that allows it to reach an elliptical orbit. With additional orbital maneuvers, the satellite might circularize its orbit.</p>
-</li>
-</ul>
-<h2 id="reentry">Reentry</h2>
-<p><strong>Reentry</strong> occurs when a spacecraft re-enters the Earth's atmosphere from orbit, typically after completing a mission. This process involves decelerating the spacecraft and using aerodynamic forces (like drag) to safely return it to Earth's surface.</p>
-<ul>
-<li><strong>Parabolic Trajectory and Reentry</strong>:</li>
-<li>A <strong>parabolic trajectory</strong> occurs when the object’s speed is close to the escape velocity but not high enough to escape Earth’s gravity. In this case, the object follows a curved path and eventually returns to Earth’s surface.</li>
-<li>During reentry, the spacecraft’s velocity must be controlled to ensure a safe descent. If the object follows a highly elliptical trajectory, it may reenter the atmosphere at high speeds, generating significant heat due to atmospheric friction. This requires heat shields to prevent the spacecraft from burning up.</li>
-<li>
-<p>Reentry typically occurs from low Earth orbit (LEO), where the object’s velocity is controlled to ensure it falls back to Earth on a predictable, safe trajectory. The spacecraft might follow a path similar to a parabolic trajectory before hitting the atmosphere.</p>
-</li>
-<li>
-<p><strong>Example</strong>: A spacecraft returning from low Earth orbit, such as the Space Shuttle, followed a reentry trajectory that involved slowing down to control its descent and reduce heating from atmospheric friction.</p>
-</li>
-</ul>
-<h2 id="escape">Escape</h2>
-<p><strong>Escape velocity</strong> refers to the minimum velocity an object must have to escape the gravitational influence of a celestial body without further propulsion. This is the speed needed to break free from Earth’s gravity.</p>
-<ul>
-<li><strong>Hyperbolic Trajectory and Escape</strong>:</li>
-<li>If the payload is released with a velocity greater than the escape velocity, it follows a <strong>hyperbolic trajectory</strong>, meaning it will escape Earth’s gravitational influence and travel into space, potentially towards other celestial bodies.</li>
-<li>A <strong>hyperbolic trajectory</strong> corresponds to an object that is not bound by Earth’s gravity and will continue moving away from Earth indefinitely unless influenced by other gravitational forces (such as the Sun or another planet).</li>
-<li>
-<p>The escape velocity depends on the altitude at which the object is released. For Earth, the escape velocity at the surface is approximately <strong>11.2 km/s</strong>.</p>
-</li>
-<li>
-<p><strong>Example</strong>: A spacecraft launched on an interplanetary mission (e.g., to Mars or another planet) would follow a hyperbolic trajectory. The escape velocity required for such a mission is determined by the initial launch speed, ensuring the spacecraft escapes Earth’s gravitational field.</p>
-</li>
-</ul>
-<h2 id="relationship-between-trajectories-and-space-mission-scenarios">Relationship Between Trajectories and Space Mission Scenarios</h2>
+<p>## Task 3 : 1. <strong>Orbital Insertion (Elliptical Orbit)</strong></p>
+<p>To achieve <strong>orbital insertion</strong>, a spacecraft must have the right velocity to enter an elliptical orbit around a celestial body. The velocity required for an elliptical orbit can be calculated using the <strong>orbital velocity formula</strong>:</p>
+<h3 id="orbital-velocity-for-an-elliptical-trajectory">Orbital Velocity (for an elliptical trajectory):</h3>
+<div class="arithmatex">\[
+v = \sqrt{\frac{G M}{r}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v \)</span> is the orbital velocity (m/s),
+- <span class="arithmatex">\( G \)</span> is the gravitational constant (<span class="arithmatex">\( 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} \)</span>),
+- <span class="arithmatex">\( M \)</span> is the mass of the central body (e.g., Earth),
+- <span class="arithmatex">\( r \)</span> is the orbital radius (m), which is the distance from the center of the celestial body.</p>
+<p>For circular orbits, the velocity must be adjusted to maintain a stable orbit, typically at the <strong>apogee</strong> for circularization.</p>
+<hr/>
+<h2 id="2-reentry-parabolic-trajectory">2. <strong>Reentry (Parabolic Trajectory)</strong></h2>
+<p>During <strong>reentry</strong>, a spacecraft follows a <strong>parabolic trajectory</strong> that brings it back into the atmosphere. The reentry velocity can be approximated using the <strong>escape velocity formula</strong> for the surface of the Earth.</p>
+<h3 id="escape-velocity-for-reentry-trajectories">Escape Velocity (for reentry trajectories):</h3>
+<div class="arithmatex">\[
+v_{\text{escape}} = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v_{\text{escape}} \)</span> is the escape velocity (m/s),
+- <span class="arithmatex">\( G \)</span> is the gravitational constant,
+- <span class="arithmatex">\( M \)</span> is the mass of the Earth (or another celestial body),
+- <span class="arithmatex">\( r \)</span> is the distance from the center of the Earth (radius of Earth).</p>
+<p>The object must be slowed down enough to enter a predictable and controlled <strong>parabolic trajectory</strong> as it re-enters the atmosphere.</p>
+<hr/>
+<h2 id="3-escape-hyperbolic-trajectory">3. <strong>Escape (Hyperbolic Trajectory)</strong></h2>
+<p>To <strong>escape</strong> a celestial body’s gravity, an object must be launched at a velocity greater than the <strong>escape velocity</strong>, which allows it to follow a <strong>hyperbolic trajectory</strong>.</p>
+<h3 id="escape-velocity-for-escaping-earths-gravity">Escape Velocity (for escaping Earth's gravity):</h3>
+<div class="arithmatex">\[
+v_{\text{escape}} = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v_{\text{escape}} \)</span> is the escape velocity (m/s),
+- <span class="arithmatex">\( G \)</span> is the gravitational constant,
+- <span class="arithmatex">\( M \)</span> is the mass of the celestial body (e.g., Earth),
+- <span class="arithmatex">\( r \)</span> is the distance from the center of the celestial body (m), which is the altitude at which the object is located.</p>
+<p>If the object is launched with a velocity higher than this value, it will follow a <strong>hyperbolic trajectory</strong>, escaping the gravitational pull of the celestial body.</p>
+<hr/>
+<h2 id="summary-of-relevant-formulas">Summary of Relevant Formulas:</h2>
 <ul>
 <li>
-<p><strong>Orbital Insertion</strong>: Requires the object to achieve a <strong>stable elliptical orbit</strong> around Earth. This is typically achieved by fine-tuning the velocity during launch or subsequent maneuvers.</p>
+<p><strong>Orbital Velocity (Elliptical Trajectory)</strong>:<br/>
+  [
+  v = \sqrt{\frac{G M}{r}}
+  ]</p>
 </li>
 <li>
-<p><strong>Reentry</strong>: Involves slowing the object down (via propulsion or aerodynamics) to ensure it follows a <strong>safe parabolic trajectory</strong> back into the Earth's atmosphere. This is often the result of a controlled burn or aerodynamic forces during atmospheric entry.</p>
-</li>
-<li>
-<p><strong>Escape</strong>: To escape Earth’s gravity, an object must reach a velocity greater than the escape velocity, leading to a <strong>hyperbolic trajectory</strong>. This trajectory ensures the object leaves Earth's gravitational pull entirely and continues into space.</p>
+<p><strong>Escape Velocity (Reentry &amp; Escape)</strong>:<br/>
+  [
+  v_{\text{escape}} = \sqrt{\frac{2 G M}{r}}
+  ]</p>
 </li>
 </ul>
 <h1 id="task-4-develop-a-computational-tool-to-simulate-and-visualize-the-motion-of-the-payload-under-earths-gravity">Task 4: Develop a Computational Tool to Simulate and Visualize the Motion of the Payload Under Earth's Gravity</h1>
