@@ -94,9 +94,17 @@ As damping ($b$) decreases, the resonance peak becomes sharper, meaning the syst
 
 The forced damped pendulum serves as a model for various real-world systems where periodic forces interact with damping and restoring forces.
 
-## 1. Energy Harvesting Devices  
-- Used in **vibration-based energy harvesters**, where mechanical motion is converted into electrical energy.  
-- Examples: Piezoelectric and electromagnetic harvesters in smart sensors.
+## 1. Energy Harvesting Devices
+Vibration-based energy harvesters convert mechanical motion into electrical energy. The voltage output of a piezoelectric harvester follows the equation:
+
+\[
+V(t) = V_0 e^{-\gamma t} \sin(\omega t)
+\]
+
+where:  
+- \( V_0 \) is the initial voltage,  
+- \( \gamma \) is the damping coefficient,  
+- \( \omega \) is the oscillation frequency.
 
 ## 2. Suspension Bridges  
 - Large structures like the **Tacoma Narrows Bridge** exhibit forced oscillations due to wind forces.  
