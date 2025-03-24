@@ -202,8 +202,4 @@ def simulate_projectile_motion(initial_velocities):
 # Initial velocities to test
 initial_velocities = [20, 40, 60, 80]  # Different initial velocities (m/s)
 ```
-![alt text](image.png)
-
 ![alt text](image-2.png)
-
-![alt text](image-3.png)
