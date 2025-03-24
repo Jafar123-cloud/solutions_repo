@@ -158,6 +158,17 @@ plt.grid(True)
 plt.show()
 ```
 ![alt text](image-7.png)
+```
+plt.figure(figsize=(8, 6))
+plt.plot(solution.t, y, label="Y position", color='orange')
+plt.title("Y Position vs Time")
+plt.xlabel("Time (s)")
+plt.ylabel("Y position (m)")
+plt.grid(True)
+plt.show()
+```
+![alt text](image-8.png)
+
  ## Task 3 : 1. **Orbital Insertion (Elliptical Orbit)**
 
 To achieve **orbital insertion**, a spacecraft must have the right velocity to enter an elliptical orbit around a celestial body. The velocity required for an elliptical orbit can be calculated using the **orbital velocity formula**:
