@@ -228,55 +228,65 @@ plt.show()
 ```
 ![alt text](image-1.png)
 
-# Task 4 : Importance of Cosmic Velocities in Space Exploration
+## 1. **First Cosmic Velocity (Orbital Velocity)**
 
-The concept of cosmic velocities—first, second, and third cosmic velocities—is crucial for understanding the requirements of space missions. These velocities determine the minimum speeds required for a spacecraft to perform a variety of essential tasks, from launching satellites to traveling to other planets and even interstellar exploration. Understanding these velocities is vital for the design and execution of modern space exploration missions.
+The first cosmic velocity is the minimum speed required for an object to stay in orbit around a celestial body. It is given by the formula:
 
-## 1. **First Cosmic Velocity: Launching Satellites into Orbit**
+\[
+v_1 = \sqrt{\frac{G M}{r}}
+\]
 
-The first cosmic velocity, or **orbital velocity**, is the speed required for a spacecraft to enter and maintain a stable orbit around a celestial body. This velocity is crucial for launching satellites into orbit around Earth or other planets. 
+Where:
+- \( v_1 \) is the orbital velocity (m/s),
+- \( G \) is the gravitational constant (\( 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} \)),
+- \( M \) is the mass of the central body (kg),
+- \( r \) is the orbital radius (m).
 
-- **Applications in Space Exploration:**
-  - **Satellite Launches:** Satellites used for communication, weather monitoring, Earth observation, and GPS navigation need to reach this velocity to enter low Earth orbit (LEO) or geostationary orbit (GEO). For Earth, the first cosmic velocity is approximately 7.8 km/s.
-  - **Space Stations:** The International Space Station (ISS) orbits Earth at about 28,000 km/h (7.8 km/s), a velocity that allows it to remain in orbit without falling back to Earth.
+For Earth, \( v_1 \approx 7.8 \, \text{km/s} \).
 
-The ability to launch satellites efficiently is fundamental to telecommunications, weather forecasting, global positioning systems, and scientific exploration.
+The first cosmic velocity, or **orbital velocity**, is the speed required for a spacecraft to enter and maintain a stable orbit around a celestial body. This velocity is crucial for launching satellites into orbit around Earth or other planets.
+---
 
-## 2. **Second Cosmic Velocity: Escaping Gravitational Influence**
+## 2. **Second Cosmic Velocity (Escape Velocity)**
+
+The second cosmic velocity is the minimum velocity needed for an object to escape the gravitational pull of a celestial body. It is given by the formula:
+
+\[
+v_2 = \sqrt{\frac{2 G M}{r}}
+\]
+
+Where:
+- \( v_2 \) is the escape velocity (m/s),
+- \( G \) is the gravitational constant,
+- \( M \) is the mass of the central body (kg),
+- \( r \) is the distance from the center of the celestial body (m).
+
+For Earth, \( v_2 \approx 11.2 \, \text{km/s} \).
 
 The second cosmic velocity, or **escape velocity**, is the minimum velocity needed for an object to escape the gravitational pull of a celestial body without any further propulsion. This is essential when sending spacecraft to other planets, moons, or deep space.
+---
 
-- **Applications in Space Exploration:**
-  - **Interplanetary Missions:** When sending probes or rovers to other planets, such as Mars or Venus, spacecraft need to reach escape velocity to leave Earth's gravitational influence. The escape velocity from Earth is about 11.2 km/s.
-  - **Interstellar Probes:** Escape velocity is also crucial for interstellar missions, such as sending probes to explore nearby stars or other star systems. Achieving escape velocity allows spacecraft to break free from Earth's gravity and begin their journey to distant destinations.
+## 3. **Third Cosmic Velocity (Solar Escape Velocity)**
 
-The escape velocity is a critical factor in mission planning, as it determines how much energy is required for a spacecraft to leave the planet and continue on its trajectory through space.
+The third cosmic velocity is the minimum velocity required to escape the gravitational influence of the Sun and leave the Solar System. It is given by the formula:
 
-## 3. **Third Cosmic Velocity: Leaving the Solar System**
+\[
+v_3 = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{sun}}}}
+\]
+
+Where:
+- \( v_3 \) is the solar escape velocity (m/s),
+- \( G \) is the gravitational constant,
+- \( M_{\text{sun}} \) is the mass of the Sun (\( 1.989 \times 10^{30} \, \text{kg} \)),
+- \( r_{\text{sun}} \) is the distance from the Sun to Earth (\( \approx 1.496 \times 10^{11} \, \text{m} \)).
+
+For Earth, \( v_3 \approx 16.7 \, \text{km/s} \).
 
 The third cosmic velocity, or **solar escape velocity**, is the speed required to break free from the Sun's gravitational influence and leave the Solar System entirely. This velocity is much higher than the second cosmic velocity, as it accounts for the Sun's mass and the vast distances involved in escaping the entire solar system.
+---
 
-- **Applications in Space Exploration:**
-  - **Exploration of the Outer Solar System:** While escaping Earth’s gravity is necessary for interplanetary missions, the third cosmic velocity is crucial for exploring beyond our solar system. Missions such as the Voyager probes, which have reached interstellar space, needed to reach velocities that allow them to escape the Sun's gravitational influence. For Earth, the third cosmic velocity is approximately 16.7 km/s.
-  - **Potential Interstellar Travel:** As humanity looks to the future of space exploration, reaching the third cosmic velocity or higher is crucial for any potential interstellar missions. Spacecraft traveling to other star systems, such as Proxima Centauri or Alpha Centauri, will require speeds much greater than what is currently achievable with today’s technology.
+## Summary of Velocities
 
-In the long term, understanding and achieving the third cosmic velocity is essential for human exploration beyond the Solar System, enabling missions to distant stars and other potentially habitable exoplanets.
-
-## 4. **Interstellar Travel: The Ultimate Challenge**
-
-The third cosmic velocity represents the theoretical limit for escape from the Sun's gravitational influence, but practical interstellar travel will require much higher velocities. The distances involved in traveling to even the closest star systems are vast—Proxima Centauri, the nearest star to our Sun, is over 4 light years away.
-
-- **Challenges:**
-  - **Current Technology:** Current spacecraft technology, such as the New Horizons probe, can only achieve speeds on the order of tens of kilometers per second, which is far below the velocities required for interstellar travel. The fastest spacecraft, as of today, would take tens of thousands of years to reach even the nearest stars.
-  - **Future Possibilities:** To enable practical interstellar travel, new propulsion technologies, such as nuclear propulsion, ion drives, or even theoretical concepts like the Alcubierre "warp" drive, would be required to reach a significant fraction of the speed of light.
-
-Interstellar travel presents one of the greatest challenges in human space exploration, as it involves not only achieving high velocities but also overcoming the limitations of current energy sources and propulsion technologies.
-
-## 5. **Conclusion: Cosmic Velocities and the Future of Space Exploration**
-
-The first, second, and third cosmic velocities form the foundation for planning all space exploration missions:
-- The **first cosmic velocity** is key to satellite launches and orbital missions, enabling applications in communication, Earth observation, and scientific research.
-- The **second cosmic velocity** is essential for interplanetary exploration, allowing spacecraft to escape Earth’s gravity and travel to other planets or moons.
-- The **third cosmic velocity** is necessary for missions that aim to explore beyond the Solar System, marking the potential for future interstellar exploration.
-
-As technology advances, achieving and exceeding these velocities will be necessary for more ambitious missions, from visiting distant planets to exploring the stars. The study and understanding of cosmic velocities are critical for continuing the human journey into the cosmos.
+- **First Cosmic Velocity**: \( v_1 = \sqrt{\frac{G M}{r}} \)
+- **Second Cosmic Velocity**: \( v_2 = \sqrt{\frac{2 G M}{r}} \)
+- **Third Cosmic Velocity**: \( v_3 = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{sun}}}} \)
