@@ -344,6 +344,54 @@ plt.tight_layout()
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-1.png"/></p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data (in case you're running just this cell)
+celestial_bodies = {
+    "Earth": {"mass": 5.972e24, "radius": 6.371e6},
+    "Mars": {"mass": 0.64171e24, "radius": 3.396e6},
+    "Jupiter": {"mass": 1.898e27, "radius": 6.991e7}
+}
+G = 6.67430e-11
+
+# Calculate velocities
+def first_cosmic_velocity(mass, radius):
+    return np.sqrt(G * mass / radius)
+
+def second_cosmic_velocity(mass, radius):
+    return np.sqrt(2 * G * mass / radius)
+
+# Compute values
+labels = list(celestial_bodies.keys())
+v1 = [first_cosmic_velocity(d["mass"], d["radius"])/1000 for d in celestial_bodies.values()]  # km/s
+v2 = [second_cosmic_velocity(d["mass"], d["radius"])/1000 for d in celestial_bodies.values()]  # km/s
+ratios = [v2[i]/v1[i] for i in range(len(labels))]
+
+# Create the plot
+plt.figure(figsize=(8, 6), facecolor='#f5f5f5')
+bars = plt.bar(labels, ratios, color=['#FF5722', '#607D8B', '#9C27B0'], 
+               edgecolor='black', alpha=0.8)
+
+plt.axhline(y=np.sqrt(2), color='red', linestyle='--', 
+            linewidth=2, label='Theoretical √2 ratio')
+plt.xlabel('Celestial Body', fontsize=12, labelpad=10)
+plt.ylabel('Escape/Orbital Velocity Ratio', fontsize=12, labelpad=10)
+plt.title('Velocity Ratios Analysis', fontsize=14, pad=20, weight='bold')
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.legend(fontsize=11)
+
+# Add ratio values
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2., height,
+            f'{height:.3f}',
+            ha='center', va='bottom', fontsize=11)
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image-6.png"/></p>
 <h2 id="1-first-cosmic-velocity-orbital-velocity_1">1. <strong>First Cosmic Velocity (Orbital Velocity)</strong></h2>
 <p>The first cosmic velocity is the minimum speed required for an object to stay in orbit around a celestial body. It is given by the formula:</p>
 <div class="arithmatex">\[
