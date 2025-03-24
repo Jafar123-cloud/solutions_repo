@@ -239,6 +239,7 @@
 <hr/>
 <h1 id="task-3-practical-applications-of-the-forced-damped-pendulum">Task 3 : Practical Applications of the Forced Damped Pendulum</h1>
 <p>The forced damped pendulum serves as a model for various real-world systems where periodic forces interact with damping and restoring forces.</p>
+<h1 id="real-world-applications-of-forced-oscillations">Real-World Applications of Forced Oscillations</h1>
 <h2 id="1-energy-harvesting-devices">1. Energy Harvesting Devices</h2>
 <p>Vibration-based energy harvesters convert mechanical motion into electrical energy. The voltage output of a piezoelectric harvester follows the equation:</p>
 <div class="arithmatex">\[
@@ -248,26 +249,66 @@ V(t) = V_0 e^{-\gamma t} \sin(\omega t)
 - <span class="arithmatex">\( V_0 \)</span> is the initial voltage,<br/>
 - <span class="arithmatex">\( \gamma \)</span> is the damping coefficient,<br/>
 - <span class="arithmatex">\( \omega \)</span> is the oscillation frequency.</p>
+<hr/>
 <h2 id="2-suspension-bridges">2. Suspension Bridges</h2>
-<ul>
-<li>Large structures like the <strong>Tacoma Narrows Bridge</strong> exhibit forced oscillations due to wind forces.  </li>
-<li>Understanding resonance helps in designing damping mechanisms to prevent catastrophic failures.</li>
-</ul>
-<h2 id="3-oscillating-circuits">3. Oscillating Circuits</h2>
-<ul>
-<li>Electrical <strong>RLC circuits</strong> with alternating current behave analogously to the pendulum.  </li>
-<li>The driving force corresponds to an AC voltage, damping is due to resistance, and inductance plays the role of inertia.</li>
-</ul>
+<p>Suspension bridges can experience resonance due to wind forces, modeled by:</p>
+<div class="arithmatex">\[
+x(t) = \frac{F_0}{m} \frac{\sin(\omega_{\text{drive}} t)}{\omega_0^2 - \omega_{\text{drive}}^2 + i \gamma \omega_{\text{drive}}}
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( F_0 \)</span> is the driving force amplitude,<br/>
+- <span class="arithmatex">\( m \)</span> is the mass,<br/>
+- <span class="arithmatex">\( \omega_0 \)</span> is the natural frequency,<br/>
+- <span class="arithmatex">\( \omega_{\text{drive}} \)</span> is the driving frequency,<br/>
+- <span class="arithmatex">\( \gamma \)</span> is the damping coefficient.</p>
+<hr/>
+<h2 id="3-oscillating-circuits-rlc-circuit">3. Oscillating Circuits (RLC Circuit)</h2>
+<p>An RLC circuit with an alternating current behaves as a forced harmonic oscillator:</p>
+<div class="arithmatex">\[
+V(t) = V_0 e^{-\gamma t} \cos(\omega t)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( V_0 \)</span> is the initial voltage,<br/>
+- <span class="arithmatex">\( \gamma = \frac{R}{2L} \)</span> is the damping coefficient,<br/>
+- <span class="arithmatex">\( \omega = \frac{1}{\sqrt{LC}} \)</span> is the resonance frequency.</p>
+<p>The impedance of the circuit as a function of frequency is:</p>
+<div class="arithmatex">\[
+Z(\omega) = \sqrt{R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2}
+\]</div>
+<hr/>
 <h2 id="4-clocks-and-timekeeping">4. Clocks and Timekeeping</h2>
-<ul>
-<li><strong>Pendulum clocks</strong> rely on periodic motion but require controlled damping to maintain accuracy.  </li>
-<li>External forcing (e.g., escapement mechanism) ensures consistent oscillations.</li>
-</ul>
+<p>Pendulum clocks maintain accurate oscillations using an external forcing mechanism:</p>
+<div class="arithmatex">\[
+\theta(t) = \theta_0 e^{-\gamma t} \cos(\omega t) + A \sin(\omega_{\text{drive}} t)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( \theta_0 \)</span> is the initial angular displacement,<br/>
+- <span class="arithmatex">\( \gamma \)</span> is the damping coefficient,<br/>
+- <span class="arithmatex">\( A \)</span> is the amplitude of the driving force.</p>
+<p>The period of a simple pendulum is given by:</p>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{L}{g}}
+\]</div>
+<p>where <span class="arithmatex">\( L \)</span> is the length of the pendulum and <span class="arithmatex">\( g \)</span> is the acceleration due to gravity.</p>
+<hr/>
 <h2 id="5-human-movement-biomechanics">5. Human Movement &amp; Biomechanics</h2>
-<ul>
-<li><strong>Gait dynamics</strong> in walking and running exhibit forced oscillatory behavior.  </li>
-<li>Studying these dynamics helps in prosthetic design and rehabilitation.</li>
-</ul>
+<p>Biomechanics uses forced oscillation models to describe gait dynamics:</p>
+<div class="arithmatex">\[
+\theta_{\text{leg}}(t) = \theta_0 e^{-\gamma t} \cos(\omega t)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( \theta_0 \)</span> is the initial leg angle,<br/>
+- <span class="arithmatex">\( \gamma \)</span> is the damping factor due to muscle resistance,<br/>
+- <span class="arithmatex">\( \omega \)</span> represents the natural swing frequency.</p>
+<p>The human gait cycle can also be modeled using a second-order differential equation:</p>
+<div class="arithmatex">\[
+m \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + k\theta = F_{\text{drive}}(t)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( m \)</span> is the effective mass of the leg,<br/>
+- <span class="arithmatex">\( b \)</span> is the damping coefficient,<br/>
+- <span class="arithmatex">\( k \)</span> is the stiffness,<br/>
+- <span class="arithmatex">\( F_{\text{drive}}(t) \)</span> is the external forcing function from muscles.</p>
 <hr/>
 <h1 id="task-4-implementation-simulating-the-forced-damped-pendulum">Task 4 : Implementation: Simulating the Forced Damped Pendulum</h1>
 <p>To understand the complex behavior of the forced damped pendulum, we implement a computational model using Python. This model solves the equation of motion numerically and visualizes key dynamical features.</p>
