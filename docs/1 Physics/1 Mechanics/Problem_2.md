@@ -94,34 +94,103 @@ As damping ($b$) decreases, the resonance peak becomes sharper, meaning the syst
 
 The forced damped pendulum serves as a model for various real-world systems where periodic forces interact with damping and restoring forces.
 
+# Real-World Applications of Forced Oscillations
+
 ## 1. Energy Harvesting Devices
 Vibration-based energy harvesters convert mechanical motion into electrical energy. The voltage output of a piezoelectric harvester follows the equation:
 
-\[
+$$
 V(t) = V_0 e^{-\gamma t} \sin(\omega t)
-\]
+$$
 
 where:  
 - \( V_0 \) is the initial voltage,  
 - \( \gamma \) is the damping coefficient,  
 - \( \omega \) is the oscillation frequency.
 
-## 2. Suspension Bridges  
-- Large structures like the **Tacoma Narrows Bridge** exhibit forced oscillations due to wind forces.  
-- Understanding resonance helps in designing damping mechanisms to prevent catastrophic failures.
+---
 
-## 3. Oscillating Circuits  
-- Electrical **RLC circuits** with alternating current behave analogously to the pendulum.  
-- The driving force corresponds to an AC voltage, damping is due to resistance, and inductance plays the role of inertia.
+## 2. Suspension Bridges
+Suspension bridges can experience resonance due to wind forces, modeled by:
 
-## 4. Clocks and Timekeeping  
-- **Pendulum clocks** rely on periodic motion but require controlled damping to maintain accuracy.  
-- External forcing (e.g., escapement mechanism) ensures consistent oscillations.
+$$
+x(t) = \frac{F_0}{m} \frac{\sin(\omega_{\text{drive}} t)}{\omega_0^2 - \omega_{\text{drive}}^2 + i \gamma \omega_{\text{drive}}}
+$$
 
-## 5. Human Movement & Biomechanics  
-- **Gait dynamics** in walking and running exhibit forced oscillatory behavior.  
-- Studying these dynamics helps in prosthetic design and rehabilitation.
+where:  
+- \( F_0 \) is the driving force amplitude,  
+- \( m \) is the mass,  
+- \( \omega_0 \) is the natural frequency,  
+- \( \omega_{\text{drive}} \) is the driving frequency,  
+- \( \gamma \) is the damping coefficient.
 
+---
+
+## 3. Oscillating Circuits (RLC Circuit)
+An RLC circuit with an alternating current behaves as a forced harmonic oscillator:
+
+$$
+V(t) = V_0 e^{-\gamma t} \cos(\omega t)
+$$
+
+where:  
+- \( V_0 \) is the initial voltage,  
+- \( \gamma = \frac{R}{2L} \) is the damping coefficient,  
+- \( \omega = \frac{1}{\sqrt{LC}} \) is the resonance frequency.
+
+The impedance of the circuit as a function of frequency is:
+
+$$
+Z(\omega) = \sqrt{R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2}
+$$
+
+---
+
+## 4. Clocks and Timekeeping
+Pendulum clocks maintain accurate oscillations using an external forcing mechanism:
+
+$$
+\theta(t) = \theta_0 e^{-\gamma t} \cos(\omega t) + A \sin(\omega_{\text{drive}} t)
+$$
+
+where:  
+- \( \theta_0 \) is the initial angular displacement,  
+- \( \gamma \) is the damping coefficient,  
+- \( A \) is the amplitude of the driving force.
+
+The period of a simple pendulum is given by:
+
+$$
+T = 2\pi \sqrt{\frac{L}{g}}
+$$
+
+where \( L \) is the length of the pendulum and \( g \) is the acceleration due to gravity.
+
+---
+
+## 5. Human Movement & Biomechanics
+Biomechanics uses forced oscillation models to describe gait dynamics:
+
+$$
+\theta_{\text{leg}}(t) = \theta_0 e^{-\gamma t} \cos(\omega t)
+$$
+
+where:  
+- \( \theta_0 \) is the initial leg angle,  
+- \( \gamma \) is the damping factor due to muscle resistance,  
+- \( \omega \) represents the natural swing frequency.
+
+The human gait cycle can also be modeled using a second-order differential equation:
+
+$$
+m \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + k\theta = F_{\text{drive}}(t)
+$$
+
+where:  
+- \( m \) is the effective mass of the leg,  
+- \( b \) is the damping coefficient,  
+- \( k \) is the stiffness,  
+- \( F_{\text{drive}}(t) \) is the external forcing function from muscles.
 ---
 
 # Task 4 : Implementation: Simulating the Forced Damped Pendulum
