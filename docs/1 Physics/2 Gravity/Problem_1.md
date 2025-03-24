@@ -218,3 +218,23 @@ plt.legend ()
 plt.show ()
 ```
 ![alt text](image.png)
+```
+bodies = {
+    'Earth': 5.972e24,
+    'Mars': 6.39e23,
+    'Jupiter': 1.898e27
+}
+
+plt.figure(figsize=(10,6))
+for name, mass in bodies.items():
+    periods = 2*np.pi*np.sqrt(radii**3/(G*mass))/(60*60*24)
+    plt.plot(radii, periods, label=name)
+
+plt.xlabel('Orbital Radius (m)')
+plt.ylabel('Period (days)')
+plt.title('Orbital Period for Different Central Bodies')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+![alt text](image-4.png)
