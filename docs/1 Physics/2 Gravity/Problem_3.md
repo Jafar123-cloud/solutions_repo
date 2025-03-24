@@ -142,6 +142,22 @@ plt.show()
 ```
 ![alt text](image-2.png)
 
+```
+# Extract velocity components
+vx, vy = solution.y[2], solution.y[3]
+
+# Plot velocity components over time (X and Y velocities)
+plt.figure(figsize=(8, 6))
+plt.plot(solution.t, vx, label="X velocity", color='green')
+plt.plot(solution.t, vy, label="Y velocity", color='purple')
+plt.title("Velocity Components vs Time")
+plt.xlabel("Time (s)")
+plt.ylabel("Velocity (m/s)")
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+![alt text](image-7.png)
  ## Task 3 : 1. **Orbital Insertion (Elliptical Orbit)**
 
 To achieve **orbital insertion**, a spacecraft must have the right velocity to enter an elliptical orbit around a celestial body. The velocity required for an elliptical orbit can be calculated using the **orbital velocity formula**:
