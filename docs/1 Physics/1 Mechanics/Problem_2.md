@@ -260,4 +260,4 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-![alt text](image-3.png)
+![alt text](image-1.png)
