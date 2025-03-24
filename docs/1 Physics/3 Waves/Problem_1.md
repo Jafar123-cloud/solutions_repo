@@ -44,7 +44,50 @@ where $ N $ is the number of sources.
 
 ---
 
-## **Graphical Representation**
+---
+
+## **Deliverables**
+1. **Mathematical Model**:
+   - Formulate the equations describing the waves from multiple sources.
+   - Apply the **principle of superposition** to determine total displacement.
+   
+2. **Graphical Representation**:
+   - Generate **visual simulations** showing interference patterns.
+   - Identify **constructive** and **destructive** interference regions.
+   
+3. **Code Implementation**:
+   - A Python script (or Jupyter Notebook) implementing the simulation.
+   - Well-commented code for clarity.
+
+---
+
+## **Wave Equation for a Single Source**
+A circular wave on the water surface, emanating from a point source located at $(x_0, y_0)$, is described by:
+
+$$
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos (kr - \omega t + \phi)
+$$
+
+where:
+- $A$ = amplitude of the wave.
+- $k = \frac{2\pi}{\lambda}$ = wave number.
+- $\omega = 2\pi f$ = angular frequency.
+- $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ = distance from the source.
+- $\phi$ = initial phase.
+
+---
+
+## **Superposition of Waves from Multiple Sources**
+For a polygon with $N$ sources at coordinates $(x_i, y_i)$, the total wave displacement is:
+
+$$
+\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \frac{A}{\sqrt{r_i}} \cos (k r_i - \omega t + \phi)
+$$
+
+where $r_i$ is the distance from the $i$th source.
+
+---
+
 
 ### **1. Circular Wave from a Single Source**
 ```python
