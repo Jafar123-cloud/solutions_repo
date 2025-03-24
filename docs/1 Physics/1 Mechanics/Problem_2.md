@@ -193,78 +193,71 @@ where:
 - \( F_{\text{drive}}(t) \) is the external forcing function from muscles.
 ---
 
-# Task 4 : Implementation: Simulating the Forced Damped Pendulum
+# Task 4 : Forced Damped Pendulum Simulation
 
-To understand the complex behavior of the forced damped pendulum, we implement a computational model using Python. This model solves the equation of motion numerically and visualizes key dynamical features.
+## Introduction
 
-## 1. Governing Equation
+The forced damped pendulum is a physical system where the motion of a pendulum is influenced by both damping (resistive force) and an external periodic force. We are going to model this system using the following differential equation:
 
-The equation describing the motion is:
+$$ \theta''(t) + 2\gamma \theta'(t) + \omega_0^2 \sin(\theta(t)) = A \cos(\omega t) $$
 
-$$
-\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A\cos(\omega t)
-$$
+Where:
+- $ \theta(t) $ is the angle of the pendulum as a function of time.
+- $ \gamma $ is the damping coefficient.
+- $ \omega_0 $ is the natural frequency of the pendulum (without damping).
+- $ A $ is the amplitude of the external driving force.
+- $ \omega $ is the frequency of the external driving force.
 
-Rewriting as a system of first-order differential equations:
+### Step 1: Numerical Solution
 
-$$
-\frac{d\theta}{dt} = \omega
-$$
-
-$$
-\frac{d\omega}{dt} = -b\omega - \frac{g}{L} \sin\theta + A\cos(\Omega t)
-$$
-
-where:
-- $\theta$ is the angular displacement,
-- $\omega$ is the angular velocity,
-- $b$ is the damping coefficient,
-- $A$ is the driving amplitude,
-- $\Omega$ is the driving frequency.
-
-## 2. Numerical Simulation
-
-We use the **fourth-order Runge-Kutta (RK4) method** to solve these equations. This approach ensures accurate integration of nonlinear dynamics.
-
-### Python Implementation
+We will use the Runge-Kutta method to solve this second-order differential equation.
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
+# Define the system of ODEs
+def damped_pendulum(t, y, gamma, omega_0, A, omega):
+    theta, theta_dot = y
+    dtheta_dt = theta_dot
+    dtheta_dot_dt = -2 * gamma * theta_dot - omega_0**2 * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, dtheta_dot_dt]
+
 # Parameters
-g, L = 9.81, 1.0  # Gravity and pendulum length
-b = 0.2           # Damping coefficient
-A = 1.2           # Driving amplitude
-Omega = 2.0       # Driving frequency
-theta0, omega0 = 0.2, 0.0  # Initial conditions
-t_max, dt = 100, 0.01      # Simulation time
+gamma = 0.1  # Damping coefficient
+omega_0 = 2.0  # Natural frequency
+A = 0.5  # Amplitude of the driving force
+omega = 1.0  # Driving frequency
 
-# Equations of motion
-def pendulum(t, y):
-    theta, omega = y
-    dtheta_dt = omega
-    domega_dt = -b * omega - (g / L) * np.sin(theta) + A * np.cos(Omega * t)
-    return [dtheta_dt, domega_dt]
+# Initial conditions
+theta_0 = 0.1  # Initial angle in radians
+theta_dot_0 = 0.0  # Initial angular velocity
+y0 = [theta_0, theta_dot_0]  # Initial conditions
 
-# Solve system
-t_span = (0, t_max)
-t_eval = np.arange(0, t_max, dt)
-sol = solve_ivp(pendulum, t_span, [theta0, omega0], t_eval=t_eval, method='RK45')
+# Time span for the simulation
+t_span = (0, 100)  # Time interval for the simulation
+t_eval = np.linspace(t_span[0], t_span[1], 10000)  # Time points for evaluation
 
-# Extract results
-theta, omega = sol.y
-t = sol.t
+# Solve the ODE
+sol = solve_ivp(damped_pendulum, t_span, y0, args=(gamma, omega_0, A, omega), t_eval=t_eval)
 
-# Plot time evolution
-plt.figure(figsize=(10, 4))
-plt.plot(t, theta, label=r'$\theta(t)$')
-plt.xlabel('Time')
-plt.ylabel('Angular Displacement')
-plt.title('Time Evolution of the Forced Damped Pendulum')
-plt.legend()
-plt.grid()
+# Plot the results
+plt.figure(figsize=(10, 6))
+plt.subplot(2, 1, 1)
+plt.plot(sol.t, sol.y[0], label='Angle (theta)')
+plt.xlabel('Time (s)')
+plt.ylabel('Angle (rad)')
+plt.title('Forced Damped Pendulum Motion')
+plt.grid(True)
+
+plt.subplot(2, 1, 2)
+plt.plot(sol.t, sol.y[1], label='Angular Velocity (theta_dot)', color='r')
+plt.xlabel('Time (s)')
+plt.ylabel('Angular Velocity (rad/s)')
+plt.grid(True)
+
+plt.tight_layout()
 plt.show()
 ```
-![alt text](image-1.png)
+![alt text](image-3.png)
