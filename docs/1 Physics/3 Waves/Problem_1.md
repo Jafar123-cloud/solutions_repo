@@ -1,4 +1,4 @@
-# **Task: Circular Wave Interference from a Point Source**
+# **Task 1 : Circular Wave Interference from a Point Source**
 
 ## **Wave Equation**
 A circular wave on the water surface, emanating from a point source located at $ (x_0, y_0) $, can be described by:
