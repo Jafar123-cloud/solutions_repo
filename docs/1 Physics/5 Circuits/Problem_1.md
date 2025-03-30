@@ -48,7 +48,6 @@ Let's assume we have the following circuit with resistors:
 - $R_3 = 30 \ \Omega$
 - $R_4 = 40 \ \Omega$
 
-This circuit is represented as a graph where each node is a junction, and each edge is a resistor with a given resistance value.
 
 ```plaintext
 Node 1 --- R1 --- Node 2 --- R2 --- Node 3
@@ -60,9 +59,6 @@ Node 1 --- R1 --- Node 2 --- R2 --- Node 3
 
 ### 1. **Graph Representation**
 
-The circuit is represented as a graph where each resistor is an edge, and each junction (node) represents a connection between resistors. The weight of each edge is the resistance value of the corresponding resistor.
-
-For example, a simple series circuit with two resistors $R_1$ and $R_2$ connected end-to-end can be represented as:
 
 ```plaintext
 Node 1 --- R1 --- Node 2 --- R2 --- Node 3
@@ -105,6 +101,12 @@ $$
 - **Step 3**: Replace the simplified series or parallel combination with a new resistor that has the equivalent resistance.
 - **Step 4**: Remove the original resistors from the graph and update it with the new equivalent resistor.
 - **Step 5**: Repeat steps 1-4 until only one resistor remains.
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
 
 ### 4. Handling Nested Series and Parallel Combinations
 
