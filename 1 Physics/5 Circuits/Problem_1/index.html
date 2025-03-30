@@ -221,12 +221,112 @@
 <li><span class="arithmatex">\(R_4 = 40 \ \Omega\)</span></li>
 </ul>
 <p>This circuit is represented as a graph where each node is a junction, and each edge is a resistor with a given resistance value.</p>
-<p>```plaintext
-Node 1 --- R1 --- Node 2 --- R2 --- Node 3
+<pre><code class="language-plaintext">Node 1 --- R1 --- Node 2 --- R2 --- Node 3
                              |
                              R3
                              |
-                           Node 4 --- R4</p>
+                           Node 4 --- R4
+
+
+### 1. **Graph Representation**
+
+The circuit is represented as a graph where each resistor is an edge, and each junction (node) represents a connection between resistors. The weight of each edge is the resistance value of the corresponding resistor.
+
+For example, a simple series circuit with two resistors $R_1$ and $R_2$ connected end-to-end can be represented as:
+
+```plaintext
+Node 1 --- R1 --- Node 2 --- R2 --- Node 3
+</code></pre>
+<h3 id="2-identifying-series-and-parallel-connections">2. Identifying Series and Parallel Connections</h3>
+<p>The algorithm identifies series and parallel combinations and simplifies them to an equivalent resistor.</p>
+<h4 id="series-connection">Series Connection:</h4>
+<p>Two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> connected in series have an equivalent resistance <span class="arithmatex">\(R_{\text{eq}}\)</span> given by:</p>
+<div class="arithmatex">\[
+R_{\text{eq}} = R_1 + R_2
+\]</div>
+<p>For <span class="arithmatex">\(n\)</span> resistors <span class="arithmatex">\(R_1\)</span>, <span class="arithmatex">\(R_2\)</span>, ..., <span class="arithmatex">\(R_n\)</span> in series:</p>
+<div class="arithmatex">\[
+R_{\text{eq}} = R_1 + R_2 + \dots + R_n
+\]</div>
+<h4 id="parallel-connection">Parallel Connection:</h4>
+<p>Two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> connected in parallel have an equivalent resistance <span class="arithmatex">\(R_{\text{eq}}\)</span> given by:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+\]</div>
+<p>For <span class="arithmatex">\(n\)</span> resistors <span class="arithmatex">\(R_1\)</span>, <span class="arithmatex">\(R_2\)</span>, ..., <span class="arithmatex">\(R_n\)</span> in parallel:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \sum_{i=1}^{n} \frac{1}{R_i}
+\]</div>
+<h3 id="3-iterative-simplification">3. Iterative Simplification</h3>
+<ul>
+<li><strong>Step 1</strong>: Identify all series and parallel resistor combinations.</li>
+<li><strong>Step 2</strong>: For each series or parallel combination, calculate the equivalent resistance using the formulas above.</li>
+<li><strong>Step 3</strong>: Replace the simplified series or parallel combination with a new resistor that has the equivalent resistance.</li>
+<li><strong>Step 4</strong>: Remove the original resistors from the graph and update it with the new equivalent resistor.</li>
+<li><strong>Step 5</strong>: Repeat steps 1-4 until only one resistor remains.</li>
+</ul>
+<h3 id="4-handling-nested-series-and-parallel-combinations">4. Handling Nested Series and Parallel Combinations</h3>
+<p>For complex circuits, you may encounter nested series and parallel combinations. The algorithm will continue simplifying the graph by detecting and reducing these combinations until only one equivalent resistor remains.</p>
+<p>For example, consider a combination of resistors:</p>
+<ol>
+<li>Resistor <span class="arithmatex">\(R_1\)</span> is in series with resistor <span class="arithmatex">\(R_2\)</span>.</li>
+<li>The combination of <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> is in parallel with <span class="arithmatex">\(R_3\)</span>.</li>
+</ol>
+<p>The steps to simplify this circuit would be:</p>
+<ol>
+<li>Simplify <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> in series:</li>
+</ol>
+<p>$$
+   R_{\text{eq, series}} = R_1 + R_2
+   $$</p>
+<ol>
+<li>Then, simplify the equivalent resistance from step 1 with <span class="arithmatex">\(R_3\)</span> in parallel:</li>
+</ol>
+<p>$$
+   \frac{1}{R_{\text{eq, final}}} = \frac{1}{R_{\text{eq, series}}} + \frac{1}{R_3}
+   $$</p>
+<h3 id="example">Example:</h3>
+<p>Consider the following circuit with three resistors <span class="arithmatex">\(R_1 = 10 \ \Omega\)</span>, <span class="arithmatex">\(R_2 = 20 \ \Omega\)</span>, and <span class="arithmatex">\(R_3 = 30 \ \Omega\)</span>:</p>
+<ol>
+<li><span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are in series.</li>
+<li>The combination of <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> is in parallel with <span class="arithmatex">\(R_3\)</span>.</li>
+</ol>
+<h4 id="step-1-simplify-r_1-and-r_2-in-series">Step 1: Simplify <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> in series:</h4>
+<div class="arithmatex">\[
+R_{\text{eq, series}} = R_1 + R_2 = 10 + 20 = 30 \ \Omega
+\]</div>
+<h4 id="step-2-simplify-the-equivalent-resistance-with-r_3-in-parallel">Step 2: Simplify the equivalent resistance with <span class="arithmatex">\(R_3\)</span> in parallel:</h4>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq, final}}} = \frac{1}{30} + \frac{1}{30} = \frac{2}{30}
+\]</div>
+<div class="arithmatex">\[
+R_{\text{eq, final}} = 15 \ \Omega
+\]</div>
+<h3 id="5-output-the-equivalent-resistance">5. Output the Equivalent Resistance</h3>
+<p>After reducing the graph to a single edge, the remaining resistance is the equivalent resistance of the entire circuit.</p>
+<h3 id="formula-recap">Formula Recap:</h3>
+<ol>
+<li>
+<p><strong>Series Resistors</strong>:
+   $$ R_{\text{eq}} = R_1 + R_2 + \dots + R_n $$</p>
+</li>
+<li>
+<p><strong>Parallel Resistors</strong>:
+   $$ \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n} $$</p>
+</li>
+<li>
+<p><strong>Ohm's Law</strong>:
+   $$ V = I \cdot R $$</p>
+</li>
+<li>
+<p><strong>Power</strong>:
+   $$ P = V \cdot I $$</p>
+</li>
+</ol>
+<p>Or using Ohm's law:
+   $$ P = I^2 \cdot R $$</p>
+<p>Or:
+   $$ P = \frac{V^2}{R} $$</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
