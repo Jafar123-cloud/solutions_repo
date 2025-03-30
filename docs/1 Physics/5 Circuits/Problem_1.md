@@ -49,4 +49,3 @@ Node 1 --- R1 --- Node 2 --- R2 --- Node 3
                              R3
                              |
                            Node 4 --- R4
-
