@@ -90,8 +90,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#analyze-interference-patterns">. Analyze Interference Patterns</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#1-circular-wave-from-a-single-source">1. Circular Wave from a Single Source</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -302,86 +300,8 @@ E \propto A^2
 <li><strong>Destructive Interference</strong>: Regions where waves cancel out (lower amplitude).</li>
 </ul>
 <hr/>
-<h3 id="1-circular-wave-from-a-single-source"><strong>1. Circular Wave from a Single Source</strong></h3>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-# Define parameters
-A = 1
-lambda_ = 1
-f = 1
-omega = 2 * np.pi * f
-k = 2 * np.pi / lambda_
-x0, y0 = 0, 0
-phi = 0
-
-# Create grid
-x = np.linspace(-5, 5, 200)
-y = np.linspace(-5, 5, 200)
-X, Y = np.meshgrid(x, y)
-
-# Compute distance from source
-R = np.sqrt((X - x0)**2 + (Y - y0)**2)
-
-# Compute wave displacement at t=0
-eta = (A / np.sqrt(R + 1e-6)) * np.cos(k * R + phi)
-
-# Plot
-plt.figure(figsize=(6, 6))
-plt.contourf(X, Y, eta, levels=50, cmap='coolwarm')
-plt.colorbar(label="Wave Displacement")
-plt.scatter(x0, y0, color='black', marker='o', label="Wave Source")
-plt.legend()
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.title("Circular Wave from a Point Source")
-plt.show()
-</code></pre>
 <p><img alt="alt text" src="../image.png"/></p>
-<pre><code># Define second source position
-x1, y1 = 2, 0
-
-# Compute distances
-R1 = np.sqrt((X - x0)**2 + (Y - y0)**2)
-R2 = np.sqrt((X - x1)**2 + (Y - y1)**2)
-
-# Compute superposed wave displacement
-eta_sum = (A / np.sqrt(R1 + 1e-6)) * np.cos(k * R1 + phi) + (A / np.sqrt(R2 + 1e-6)) * np.cos(k * R2 + phi)
-
-# Plot
-plt.figure(figsize=(6, 6))
-plt.contourf(X, Y, eta_sum, levels=50, cmap='coolwarm')
-plt.colorbar(label="Wave Displacement")
-plt.scatter([x0, x1], [y0, y1], color='black', marker='o', label="Wave Sources")
-plt.legend()
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.title("Superposition of Two Circular Waves")
-plt.show()
-</code></pre>
 <p><img alt="alt text" src="../image-1.png"/></p>
-<pre><code># Define third source position
-x2, y2 = 1, np.sqrt(3)
-
-# Compute distances
-R3 = np.sqrt((X - x2)**2 + (Y - y2)**2)
-
-# Compute superposed wave displacement
-eta_sum = (A / np.sqrt(R1 + 1e-6)) * np.cos(k * R1 + phi) + \
-          (A / np.sqrt(R2 + 1e-6)) * np.cos(k * R2 + phi) + \
-          (A / np.sqrt(R3 + 1e-6)) * np.cos(k * R3 + phi)
-
-# Plot
-plt.figure(figsize=(6, 6))
-plt.contourf(X, Y, eta_sum, levels=50, cmap='coolwarm')
-plt.colorbar(label="Wave Displacement")
-plt.scatter([x0, x1, x2], [y0, y1, y2], color='black', marker='o', label="Wave Sources")
-plt.legend()
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.title("Interference from Three Point Sources")
-plt.show()
-</code></pre>
 <p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
