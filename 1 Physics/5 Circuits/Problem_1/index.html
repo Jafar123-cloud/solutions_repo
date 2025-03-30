@@ -172,6 +172,57 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="option-1-simplified-task-algorithm-description">Option 1: Simplified Task – Algorithm Description</h1>
+<h2 id="algorithm-for-calculating-the-equivalent-resistance-using-graph-theory">Algorithm for Calculating the Equivalent Resistance Using Graph Theory</h2>
+<p>The algorithm to calculate the equivalent resistance of a circuit using graph theory simplifies the circuit by identifying and reducing series and parallel connections iteratively. The goal is to reduce the graph until a single equivalent resistance is obtained. </p>
+<h3 id="steps-for-the-algorithm">Steps for the Algorithm:</h3>
+<ol>
+<li><strong>Graph Representation</strong>:</li>
+<li>
+<p>Represent the circuit as a graph, where nodes (vertices) are junctions, and edges represent resistors with weights equal to their resistance values.</p>
+</li>
+<li>
+<p><strong>Series and Parallel Connection Identification</strong>:</p>
+</li>
+<li><strong>Series Connection</strong>: If two resistors are connected end-to-end (series), their resistances simply add up:</li>
+</ol>
+<p>$$
+   R_{eq} = R_1 + R_2
+   $$</p>
+<ul>
+<li><strong>Parallel Connection</strong>: If two resistors are connected in parallel, the equivalent resistance is given by: </li>
+</ul>
+<p>$$
+   \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}
+   $$</p>
+<ol>
+<li><strong>Iterative Simplification</strong>:</li>
+<li>Perform a depth-first search (DFS) or another traversal method to detect series and parallel combinations.</li>
+<li>Once identified, replace the detected series or parallel components with their equivalent resistance.</li>
+<li>
+<p>Update the graph by removing the old components and adding the new equivalent resistance as a single edge.</p>
+</li>
+<li>
+<p><strong>Handling Nested Combinations</strong>:</p>
+</li>
+<li>After each simplification step, check the resulting graph for further series or parallel combinations.</li>
+<li>Repeat the process until the graph is reduced to a single equivalent resistance.</li>
+</ol>
+<h3 id="example-circuit-representation">Example Circuit Representation</h3>
+<p>Let's assume we have the following circuit with resistors:</p>
+<ul>
+<li><span class="arithmatex">\(R_1 = 10 \ \Omega\)</span></li>
+<li><span class="arithmatex">\(R_2 = 20 \ \Omega\)</span></li>
+<li><span class="arithmatex">\(R_3 = 30 \ \Omega\)</span></li>
+<li><span class="arithmatex">\(R_4 = 40 \ \Omega\)</span></li>
+</ul>
+<p>This circuit is represented as a graph where each node is a junction, and each edge is a resistor with a given resistance value.</p>
+<p>```plaintext
+Node 1 --- R1 --- Node 2 --- R2 --- Node 3
+                             |
+                             R3
+                             |
+                           Node 4 --- R4</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
