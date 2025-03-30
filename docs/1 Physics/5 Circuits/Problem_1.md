@@ -24,6 +24,10 @@ The algorithm to calculate the equivalent resistance of a circuit using graph th
    \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}
    $$
 
+   ![alt text](image-1.png)
+
+   ![alt text](image-2.png)
+
    ![alt text](image.png)
 
 3. **Iterative Simplification**:
