@@ -24,6 +24,8 @@ The algorithm to calculate the equivalent resistance of a circuit using graph th
    \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}
    $$
 
+   ![alt text](image.png)
+
 3. **Iterative Simplification**:
    - Perform a depth-first search (DFS) or another traversal method to detect series and parallel combinations.
    - Once identified, replace the detected series or parallel components with their equivalent resistance.
