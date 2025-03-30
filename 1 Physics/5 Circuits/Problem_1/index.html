@@ -220,7 +220,6 @@
 <li><span class="arithmatex">\(R_3 = 30 \ \Omega\)</span></li>
 <li><span class="arithmatex">\(R_4 = 40 \ \Omega\)</span></li>
 </ul>
-<p>This circuit is represented as a graph where each node is a junction, and each edge is a resistor with a given resistance value.</p>
 <pre><code class="language-plaintext">Node 1 --- R1 --- Node 2 --- R2 --- Node 3
                              |
                              R3
@@ -230,9 +229,6 @@
 
 ### 1. **Graph Representation**
 
-The circuit is represented as a graph where each resistor is an edge, and each junction (node) represents a connection between resistors. The weight of each edge is the resistance value of the corresponding resistor.
-
-For example, a simple series circuit with two resistors $R_1$ and $R_2$ connected end-to-end can be represented as:
 
 ```plaintext
 Node 1 --- R1 --- Node 2 --- R2 --- Node 3
@@ -265,6 +261,9 @@ R_{\text{eq}} = R_1 + R_2 + \dots + R_n
 <li><strong>Step 4</strong>: Remove the original resistors from the graph and update it with the new equivalent resistor.</li>
 <li><strong>Step 5</strong>: Repeat steps 1-4 until only one resistor remains.</li>
 </ul>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p><img alt="alt text" src="../image-5.png"/></p>
 <h3 id="4-handling-nested-series-and-parallel-combinations">4. Handling Nested Series and Parallel Combinations</h3>
 <p>For complex circuits, you may encounter nested series and parallel combinations. The algorithm will continue simplifying the graph by detecting and reducing these combinations until only one equivalent resistor remains.</p>
 <p>For example, consider a combination of resistors:</p>
