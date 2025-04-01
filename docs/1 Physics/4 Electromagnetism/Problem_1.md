@@ -215,4 +215,6 @@ Where the additional term $\frac{d\mathbf{B}}{dt}$ accounts for the change in th
 - Drift Velocity in Plasma: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$
 - Helical Motion Components: $$ \mathbf{r}(t) = \mathbf{r}_\text{mag} + \mathbf{r}_\text{elec} $$
 
+![alt text](image.png)
 
+![alt text](image-1.png)
