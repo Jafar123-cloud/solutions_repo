@@ -219,151 +219,8 @@ Where the additional term $\frac{d\mathbf{B}}{dt}$ accounts for the change in th
 
 ![alt text](image-1.png)
 
-# Formulas for Parameter Exploration
 
-### 1. Lorentz Force with Variable Parameters:
-
-The general equation for the Lorentz force acting on a charged particle of charge $q$ and velocity $\mathbf{v}$ in the presence of electric $\mathbf{E}$ and magnetic $\mathbf{B}$ fields is:
-
-$$
-\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
-$$
-
-Where:
-- $\mathbf{F}$ is the force,
-- $q$ is the charge of the particle,
-- $\mathbf{E}$ is the electric field,
-- $\mathbf{B}$ is the magnetic field,
-- $\mathbf{v}$ is the velocity of the particle.
-
-### 2. Magnetic Force on a Charged Particle:
-
-The force on a charged particle with charge $q$ moving in a magnetic field $\mathbf{B}$ is:
-
-$$
-\mathbf{F_B} = q\mathbf{v} \times \mathbf{B}
-$$
-
-Where:
-- $\mathbf{F_B}$ is the magnetic force,
-- $q$ is the charge of the particle,
-- $\mathbf{v}$ is the velocity,
-- $\mathbf{B}$ is the magnetic field.
-
-### 3. Electric Force on a Charged Particle:
-
-The force on a charged particle with charge $q$ in an electric field $\mathbf{E}$ is:
-
-$$
-\mathbf{F_E} = q\mathbf{E}
-$$
-
-Where:
-- $\mathbf{F_E}$ is the electric force,
-- $q$ is the charge of the particle,
-- $\mathbf{E}$ is the electric field.
-
-### 4. Radius of Circular Motion in a Magnetic Field:
-
-The radius $r$ of the circular motion of a charged particle with charge $q$ and mass $m$ in a magnetic field $\mathbf{B}$ depends on the velocity $v$ of the particle:
-
-$$
-r = \frac{mv}{qB}
-$$
-
-Where:
-- $r$ is the radius of the circular path,
-- $m$ is the mass of the particle,
-- $v$ is the velocity of the particle,
-- $q$ is the charge of the particle,
-- $B$ is the magnetic field strength.
-
-### 5. Cyclotron Frequency with Charge and Mass Variations:
-
-The cyclotron frequency $f$ depends on the charge $q$, mass $m$, and magnetic field $B$:
-
-$$
-f = \frac{qB}{2\pi m}
-$$
-
-Where:
-- $f$ is the cyclotron frequency,
-- $q$ is the charge of the particle,
-- $B$ is the magnetic field strength,
-- $m$ is the mass of the particle.
-
-### 6. Velocity in Circular Motion:
-
-The velocity $v$ of a particle moving in a circular path under the influence of a magnetic field is given by:
-
-$$
-v = \frac{qBr}{m}
-$$
-
-Where:
-- $v$ is the velocity of the particle,
-- $q$ is the charge of the particle,
-- $B$ is the magnetic field strength,
-- $r$ is the radius of the circular path,
-- $m$ is the mass of the particle.
-
-### 7. Particle’s Kinetic Energy:
-
-The kinetic energy $K$ of a particle with mass $m$ and velocity $v$ is:
-
-$$
-K = \frac{1}{2}mv^2
-$$
-
-Where:
-- $K$ is the kinetic energy,
-- $m$ is the mass of the particle,
-- $v$ is the velocity of the particle.
-
-### 8. Particle’s Speed as a Function of Electric and Magnetic Fields:
-
-When both electric and magnetic fields are present, the velocity components of a charged particle are influenced by these fields. The velocity components in the perpendicular and parallel directions are:
-
-1. **Perpendicular velocity component** (in the circular motion due to the magnetic field):
-   $$ v_\perp = \frac{qB}{m} r $$
-
-2. **Parallel velocity component** (due to the electric field):
-   $$ v_\parallel = \frac{E}{B} $$
-
-Where:
-- $v_\perp$ is the velocity component perpendicular to the magnetic field,
-- $v_\parallel$ is the velocity component parallel to the electric field.
-
-### 9. Motion of a Charged Particle in Combined Electric and Magnetic Fields:
-
-The combined electric and magnetic fields affect the particle's trajectory. The equation of motion is:
-
-$$
-\frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
-$$
-
-Where:
-- $\frac{d^2\mathbf{r}}{dt^2}$ is the acceleration of the particle,
-- $\mathbf{E}$ and $\mathbf{B}$ are the electric and magnetic fields, respectively,
-- $q$ is the charge of the particle,
-- $m$ is the mass of the particle.
-
-### 10. Drift Velocity in Crossed Fields:
-
-In a system with crossed electric and magnetic fields (perpendicular electric and magnetic fields), the drift velocity $\mathbf{v_d}$ of the particle is given by:
-
-$$
-\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
-$$
-
-Where:
-- $\mathbf{v_d}$ is the drift velocity,
-- $\mathbf{E}$ is the electric field,
-- $\mathbf{B}$ is the magnetic field.
-
-This equation describes the motion of a charged particle when both electric and magnetic fields are applied in a perpendicular configuration.
-
-### 11. Helical Motion of a Charged Particle:
+### 1. Helical Motion of a Charged Particle:
 
 In the case of a combined electric and magnetic field, the particle’s trajectory can be helical. The helical motion components are:
 
@@ -384,7 +241,7 @@ $$
 \mathbf{r}(t) = \mathbf{r}_\text{mag} + \mathbf{r}_\text{elec}
 $$
 
-### 12. Magnetic Force in Non-Uniform Fields:
+### 2. Magnetic Force in Non-Uniform Fields:
 
 In a non-uniform magnetic field, the force on a charged particle is:
 
@@ -394,7 +251,7 @@ $$
 
 Where the term $\frac{d\mathbf{B}}{dt}$ accounts for the changing magnetic field, leading to more complex particle motion.
 
-### 13. Work Done by the Lorentz Force:
+### 3. Work Done by the Lorentz Force:
 
 The work done by the Lorentz force over a displacement $\mathbf{dr}$ is given by:
 
@@ -408,19 +265,5 @@ $$
 dW_{\text{magnetic}} = 0
 $$
 
-Only the electric field does work on the particle.
-
-### Summary of Key Formulas:
-
-- Lorentz Force: $$ \mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B} $$
-- Magnetic Force: $$ \mathbf{F_B} = q\mathbf{v} \times \mathbf{B} $$
-- Electric Force: $$ \mathbf{F_E} = q\mathbf{E} $$
-- Radius of Circular Motion: $$ r = \frac{mv}{qB} $$
-- Cyclotron Frequency: $$ f = \frac{qB}{2\pi m} $$
-- Particle’s Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$
-- Velocity Components in Circular Motion: $$ v_\perp = \frac{qB}{m} r $$
-- Equation of Motion in Electric and Magnetic Fields: $$ \frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B}) $$
-- Drift Velocity: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$
-- Helical Motion
 
 ![alt text](image-2.png)
