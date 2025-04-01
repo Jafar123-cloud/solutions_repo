@@ -1,2 +1,120 @@
 # Problem 1
+# Lorentz Force and Related Formulas
+
+### 1. Lorentz Force Formula:
+
+The Lorentz force $\mathbf{F}$ experienced by a charged particle with charge $q$ moving with velocity $\mathbf{v}$ in the presence of electric $\mathbf{E}$ and magnetic $\mathbf{B}$ fields is given by:
+
+$$
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+$$
+
+Where:
+- $\mathbf{F}$ is the force on the particle,
+- $q$ is the charge of the particle,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{v}$ is the velocity of the particle,
+- $\mathbf{B}$ is the magnetic field.
+
+### 2. Force on a Particle in a Magnetic Field:
+
+The force on a charged particle moving perpendicular to a magnetic field is:
+
+$$
+F = qvB
+$$
+
+Where:
+- $F$ is the force,
+- $q$ is the charge,
+- $v$ is the velocity of the particle,
+- $B$ is the magnetic field strength.
+
+This equation assumes that the velocity of the particle is perpendicular to the magnetic field.
+
+### 3. Radius of Circular Motion in a Magnetic Field:
+
+The radius $r$ of the circular motion of a particle with charge $q$ and mass $m$ in a uniform magnetic field $B$ is given by:
+
+$$
+r = \frac{mv}{qB}
+$$
+
+Where:
+- $m$ is the mass of the particle,
+- $v$ is the velocity of the particle,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength.
+
+### 4. Cyclotron Frequency:
+
+The frequency of a charged particle in circular motion in a magnetic field is called the cyclotron frequency and is given by:
+
+$$
+f = \frac{qB}{2\pi m}
+$$
+
+Where:
+- $f$ is the frequency,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength,
+- $m$ is the mass of the particle.
+
+### 5. Kinetic Energy of a Charged Particle:
+
+The kinetic energy $K$ of a particle with mass $m$ and velocity $v$ is given by:
+
+$$
+K = \frac{1}{2}mv^2
+$$
+
+This formula is important for calculating the energy of particles accelerated in systems like cyclotrons.
+
+### 6. Lorentz Force in a Uniform Electric and Magnetic Field (Crossed Fields):
+
+When both electric and magnetic fields are present, the motion of a charged particle can be described by the equation:
+
+$$
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$
+
+In cases of crossed electric and magnetic fields, such as in a velocity selector, the forces from both fields can balance, leading to specific trajectories.
+
+### 7. Drift Velocity in Plasma:
+
+In a plasma under the influence of electric and magnetic fields, the drift velocity $\mathbf{v_d}$ of charged particles is given by:
+
+$$
+\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+$$
+
+Where:
+- $\mathbf{v_d}$ is the drift velocity,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{B}$ is the magnetic field.
+
+This drift velocity is crucial in understanding plasma behavior in magnetic confinement devices.
+
+### 8. Motion of a Charged Particle in Both Electric and Magnetic Fields:
+
+When both electric and magnetic fields are applied, the motion of the charged particle is described by the following second-order differential equation:
+
+$$
+\frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$
+
+Where:
+- $\frac{d^2\mathbf{r}}{dt^2}$ is the acceleration of the particle,
+- $q$ is the charge,
+- $m$ is the mass,
+- $\mathbf{E}$ and $\mathbf{B}$ are the electric and magnetic fields, respectively.
+
+### Summary of Key Equations:
+
+- Lorentz Force: $$ \mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B} $$
+- Magnetic Force: $$ F = qvB $$
+- Radius of Circular Motion: $$ r = \frac{mv}{qB} $$
+- Cyclotron Frequency: $$ f = \frac{qB}{2\pi m} $$
+- Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$
+- Drift Velocity: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$
 
