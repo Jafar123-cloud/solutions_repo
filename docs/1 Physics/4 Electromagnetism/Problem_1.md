@@ -118,3 +118,169 @@ Where:
 - Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$
 - Drift Velocity: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$
 
+# Formulas for Simulating Particle Motion
+
+### 1. Lorentz Force Equation:
+
+The Lorentz force $\mathbf{F}$ on a charged particle of charge $q$ moving with velocity $\mathbf{v}$ in the presence of electric field $\mathbf{E}$ and magnetic field $\mathbf{B}$ is:
+
+$$
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+$$
+
+Where:
+- $\mathbf{F}$ is the force acting on the particle,
+- $q$ is the charge of the particle,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{v}$ is the velocity of the particle,
+- $\mathbf{B}$ is the magnetic field.
+
+### 2. Motion of a Charged Particle in a Magnetic Field:
+
+The force on a particle with charge $q$ moving with velocity $\mathbf{v}$ in a magnetic field $\mathbf{B}$ is given by:
+
+$$
+\mathbf{F} = q\mathbf{v} \times \mathbf{B}
+$$
+
+This equation describes the magnetic force, which is always perpendicular to both the velocity of the particle and the magnetic field.
+
+### 3. Particle's Circular Motion in a Magnetic Field:
+
+For a charged particle moving in a uniform magnetic field, the radius $r$ of the circular motion is given by:
+
+$$
+r = \frac{mv}{qB}
+$$
+
+Where:
+- $m$ is the mass of the particle,
+- $v$ is the velocity of the particle,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength.
+
+### 4. Cyclotron Frequency:
+
+The frequency $f$ of a charged particle in a uniform magnetic field is called the cyclotron frequency, and it is given by:
+
+$$
+f = \frac{qB}{2\pi m}
+$$
+
+Where:
+- $f$ is the frequency,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength,
+- $m$ is the mass of the particle.
+
+### 5. Kinetic Energy of a Charged Particle:
+
+The kinetic energy $K$ of a charged particle with mass $m$ and velocity $v$ is:
+
+$$
+K = \frac{1}{2}mv^2
+$$
+
+This equation is crucial for understanding the energy of the particle, especially when considering accelerators like cyclotrons.
+
+### 6. Work Done by the Lorentz Force:
+
+The work done by the Lorentz force $\mathbf{F}$ over a displacement $\mathbf{dr}$ is given by:
+
+$$
+dW = \mathbf{F} \cdot d\mathbf{r}
+$$
+
+Since the magnetic force is always perpendicular to the velocity, the work done by the magnetic field is zero:
+
+$$
+dW_{\text{magnetic}} = 0
+$$
+
+Only the electric field contributes to the work done on the particle.
+
+### 7. Particle Motion in Both Electric and Magnetic Fields:
+
+For a charged particle moving in the presence of both electric and magnetic fields, the equation of motion is:
+
+$$
+\frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$
+
+Where:
+- $\frac{d^2\mathbf{r}}{dt^2}$ is the acceleration of the particle,
+- $q$ is the charge of the particle,
+- $m$ is the mass of the particle,
+- $\mathbf{E}$ and $\mathbf{B}$ are the electric and magnetic fields, respectively.
+
+### 8. Drift Velocity in Plasma:
+
+In a plasma under crossed electric and magnetic fields, the drift velocity $\mathbf{v_d}$ is given by:
+
+$$
+\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+$$
+
+Where:
+- $\mathbf{v_d}$ is the drift velocity,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{B}$ is the magnetic field.
+
+### 9. Helical Motion of a Charged Particle:
+
+When a charged particle moves in a combined electric and magnetic field, its trajectory is often helical. The helical motion can be described by two components:
+1. **Circular Motion** due to the magnetic field: 
+   $$ \mathbf{r}_\text{mag} = r \cos(\omega t) \hat{i} + r \sin(\omega t) \hat{j} $$
+   where $\omega = \frac{qB}{m}$ is the angular frequency.
+
+2. **Linear Motion** due to the electric field:
+   $$ \mathbf{r}_\text{elec} = v_\parallel t \hat{k} $$
+
+Where:
+- $\mathbf{r}_\text{mag}$ is the circular motion component,
+- $r$ is the radius of the circular path,
+- $\omega$ is the angular frequency,
+- $v_\parallel$ is the velocity component parallel to the electric field,
+- $\hat{i}, \hat{j}, \hat{k}$ are unit vectors in the x, y, and z directions, respectively.
+
+The total position of the particle is the sum of the circular and linear components:
+$$
+\mathbf{r}(t) = \mathbf{r}_\text{mag} + \mathbf{r}_\text{elec}
+$$
+
+### 10. Velocity Components in Helical Motion:
+
+The velocity of the particle in helical motion can be decomposed into two components:
+1. **Perpendicular velocity** to the magnetic field:
+   $$ v_\perp = \frac{qB}{m} r $$
+
+2. **Parallel velocity** along the direction of the electric field:
+   $$ v_\parallel = \frac{E}{B} $$
+
+Where:
+- $v_\perp$ is the velocity perpendicular to the magnetic field (circular motion),
+- $v_\parallel$ is the velocity parallel to the electric field (linear motion).
+
+### 11. Magnetic Force in Non-Uniform Magnetic Field:
+
+In a non-uniform magnetic field, the force on a charged particle is given by:
+
+$$
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B}) + q \left( \frac{d\mathbf{B}}{dt} \right)
+$$
+
+Where the additional term $\frac{d\mathbf{B}}{dt}$ accounts for the change in the magnetic field over time, which leads to more complex dynamics.
+
+### Summary of Key Formulas:
+
+- Lorentz Force: $$ \mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B} $$
+- Magnetic Force: $$ \mathbf{F} = q\mathbf{v} \times \mathbf{B} $$
+- Radius of Circular Motion: $$ r = \frac{mv}{qB} $$
+- Cyclotron Frequency: $$ f = \frac{qB}{2\pi m} $$
+- Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$
+- Work Done by Lorentz Force: $$ dW = \mathbf{F} \cdot d\mathbf{r} $$
+- Equation of Motion in Electric and Magnetic Fields: $$ \frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B}) $$
+- Drift Velocity in Plasma: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$
+- Helical Motion Components: $$ \mathbf{r}(t) = \mathbf{r}_\text{mag} + \mathbf{r}_\text{elec} $$
+
+
