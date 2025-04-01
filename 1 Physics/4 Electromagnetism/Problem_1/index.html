@@ -256,6 +256,127 @@ K = \frac{1}{2}mv^2
 <li>Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$</li>
 <li>Drift Velocity: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$</li>
 </ul>
+<h1 id="formulas-for-simulating-particle-motion">Formulas for Simulating Particle Motion</h1>
+<h3 id="1-lorentz-force-equation">1. Lorentz Force Equation:</h3>
+<p>The Lorentz force <span class="arithmatex">\(\mathbf{F}\)</span> on a charged particle of charge <span class="arithmatex">\(q\)</span> moving with velocity <span class="arithmatex">\(\mathbf{v}\)</span> in the presence of electric field <span class="arithmatex">\(\mathbf{E}\)</span> and magnetic field <span class="arithmatex">\(\mathbf{B}\)</span> is:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\mathbf{F}\)</span> is the force acting on the particle,
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field,
+- <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity of the particle,
+- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field.</p>
+<h3 id="2-motion-of-a-charged-particle-in-a-magnetic-field">2. Motion of a Charged Particle in a Magnetic Field:</h3>
+<p>The force on a particle with charge <span class="arithmatex">\(q\)</span> moving with velocity <span class="arithmatex">\(\mathbf{v}\)</span> in a magnetic field <span class="arithmatex">\(\mathbf{B}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{v} \times \mathbf{B}
+\]</div>
+<p>This equation describes the magnetic force, which is always perpendicular to both the velocity of the particle and the magnetic field.</p>
+<h3 id="3-particles-circular-motion-in-a-magnetic-field">3. Particle's Circular Motion in a Magnetic Field:</h3>
+<p>For a charged particle moving in a uniform magnetic field, the radius <span class="arithmatex">\(r\)</span> of the circular motion is given by:</p>
+<div class="arithmatex">\[
+r = \frac{mv}{qB}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(m\)</span> is the mass of the particle,
+- <span class="arithmatex">\(v\)</span> is the velocity of the particle,
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
+<h3 id="4-cyclotron-frequency_1">4. Cyclotron Frequency:</h3>
+<p>The frequency <span class="arithmatex">\(f\)</span> of a charged particle in a uniform magnetic field is called the cyclotron frequency, and it is given by:</p>
+<div class="arithmatex">\[
+f = \frac{qB}{2\pi m}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(f\)</span> is the frequency,
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(B\)</span> is the magnetic field strength,
+- <span class="arithmatex">\(m\)</span> is the mass of the particle.</p>
+<h3 id="5-kinetic-energy-of-a-charged-particle_1">5. Kinetic Energy of a Charged Particle:</h3>
+<p>The kinetic energy <span class="arithmatex">\(K\)</span> of a charged particle with mass <span class="arithmatex">\(m\)</span> and velocity <span class="arithmatex">\(v\)</span> is:</p>
+<div class="arithmatex">\[
+K = \frac{1}{2}mv^2
+\]</div>
+<p>This equation is crucial for understanding the energy of the particle, especially when considering accelerators like cyclotrons.</p>
+<h3 id="6-work-done-by-the-lorentz-force">6. Work Done by the Lorentz Force:</h3>
+<p>The work done by the Lorentz force <span class="arithmatex">\(\mathbf{F}\)</span> over a displacement <span class="arithmatex">\(\mathbf{dr}\)</span> is given by:</p>
+<div class="arithmatex">\[
+dW = \mathbf{F} \cdot d\mathbf{r}
+\]</div>
+<p>Since the magnetic force is always perpendicular to the velocity, the work done by the magnetic field is zero:</p>
+<div class="arithmatex">\[
+dW_{\text{magnetic}} = 0
+\]</div>
+<p>Only the electric field contributes to the work done on the particle.</p>
+<h3 id="7-particle-motion-in-both-electric-and-magnetic-fields">7. Particle Motion in Both Electric and Magnetic Fields:</h3>
+<p>For a charged particle moving in the presence of both electric and magnetic fields, the equation of motion is:</p>
+<div class="arithmatex">\[
+\frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\frac{d^2\mathbf{r}}{dt^2}\)</span> is the acceleration of the particle,
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(m\)</span> is the mass of the particle,
+- <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> are the electric and magnetic fields, respectively.</p>
+<h3 id="8-drift-velocity-in-plasma">8. Drift Velocity in Plasma:</h3>
+<p>In a plasma under crossed electric and magnetic fields, the drift velocity <span class="arithmatex">\(\mathbf{v_d}\)</span> is given by:</p>
+<div class="arithmatex">\[
+\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\mathbf{v_d}\)</span> is the drift velocity,
+- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field,
+- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field.</p>
+<h3 id="9-helical-motion-of-a-charged-particle">9. Helical Motion of a Charged Particle:</h3>
+<p>When a charged particle moves in a combined electric and magnetic field, its trajectory is often helical. The helical motion can be described by two components:
+1. <strong>Circular Motion</strong> due to the magnetic field: 
+   $$ \mathbf{r}_\text{mag} = r \cos(\omega t) \hat{i} + r \sin(\omega t) \hat{j} $$
+   where <span class="arithmatex">\(\omega = \frac{qB}{m}\)</span> is the angular frequency.</p>
+<ol>
+<li><strong>Linear Motion</strong> due to the electric field:
+   $$ \mathbf{r}<em>\text{elec} = v</em>\parallel t \hat{k} $$</li>
+</ol>
+<p>Where:
+- <span class="arithmatex">\(\mathbf{r}_\text{mag}\)</span> is the circular motion component,
+- <span class="arithmatex">\(r\)</span> is the radius of the circular path,
+- <span class="arithmatex">\(\omega\)</span> is the angular frequency,
+- <span class="arithmatex">\(v_\parallel\)</span> is the velocity component parallel to the electric field,
+- <span class="arithmatex">\(\hat{i}, \hat{j}, \hat{k}\)</span> are unit vectors in the x, y, and z directions, respectively.</p>
+<p>The total position of the particle is the sum of the circular and linear components:
+$$
+\mathbf{r}(t) = \mathbf{r}<em>\text{mag} + \mathbf{r}</em>\text{elec}
+$$</p>
+<h3 id="10-velocity-components-in-helical-motion">10. Velocity Components in Helical Motion:</h3>
+<p>The velocity of the particle in helical motion can be decomposed into two components:
+1. <strong>Perpendicular velocity</strong> to the magnetic field:
+   $$ v_\perp = \frac{qB}{m} r $$</p>
+<ol>
+<li><strong>Parallel velocity</strong> along the direction of the electric field:
+   $$ v_\parallel = \frac{E}{B} $$</li>
+</ol>
+<p>Where:
+- <span class="arithmatex">\(v_\perp\)</span> is the velocity perpendicular to the magnetic field (circular motion),
+- <span class="arithmatex">\(v_\parallel\)</span> is the velocity parallel to the electric field (linear motion).</p>
+<h3 id="11-magnetic-force-in-non-uniform-magnetic-field">11. Magnetic Force in Non-Uniform Magnetic Field:</h3>
+<p>In a non-uniform magnetic field, the force on a charged particle is given by:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B}) + q \left( \frac{d\mathbf{B}}{dt} \right)
+\]</div>
+<p>Where the additional term <span class="arithmatex">\(\frac{d\mathbf{B}}{dt}\)</span> accounts for the change in the magnetic field over time, which leads to more complex dynamics.</p>
+<h3 id="summary-of-key-formulas">Summary of Key Formulas:</h3>
+<ul>
+<li>Lorentz Force: $$ \mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B} $$</li>
+<li>Magnetic Force: $$ \mathbf{F} = q\mathbf{v} \times \mathbf{B} $$</li>
+<li>Radius of Circular Motion: $$ r = \frac{mv}{qB} $$</li>
+<li>Cyclotron Frequency: $$ f = \frac{qB}{2\pi m} $$</li>
+<li>Kinetic Energy: $$ K = \frac{1}{2}mv^2 $$</li>
+<li>Work Done by Lorentz Force: $$ dW = \mathbf{F} \cdot d\mathbf{r} $$</li>
+<li>Equation of Motion in Electric and Magnetic Fields: $$ \frac{d^2\mathbf{r}}{dt^2} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B}) $$</li>
+<li>Drift Velocity in Plasma: $$ \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2} $$</li>
+<li>Helical Motion Components: $$ \mathbf{r}(t) = \mathbf{r}<em>\text{mag} + \mathbf{r}</em>\text{elec} $$</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
