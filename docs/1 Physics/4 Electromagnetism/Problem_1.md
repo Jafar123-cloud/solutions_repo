@@ -265,5 +265,44 @@ $$
 dW_{\text{magnetic}} = 0
 $$
 
-
 ![alt text](image-2.png)
+
+# Task 4: Visualization
+
+### Overview:
+
+In this task, we will create clear, labeled plots to visualize the trajectory of a charged particle in both 2D and 3D under the influence of electric and magnetic fields. The focus will be on visualizing the particle's path and highlighting key physical phenomena such as the **Larmor radius** and **drift velocity**.
+
+### 1. **Key Physical Phenomena**:
+
+#### Larmor Radius:
+
+The **Larmor radius** ($r_L$) is the radius of the circular motion of a charged particle moving perpendicular to a magnetic field. It is given by:
+
+$$
+r_L = \frac{mv_\perp}{qB}
+$$
+
+Where:
+- $r_L$ is the Larmor radius,
+- $m$ is the mass of the particle,
+- $v_\perp$ is the velocity component perpendicular to the magnetic field,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength.
+
+#### Drift Velocity:
+
+In the presence of crossed electric and magnetic fields, the particle experiences a **drift velocity** ($\mathbf{v_d}$), which is given by:
+
+$$
+\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+$$
+
+Where:
+- $\mathbf{v_d}$ is the drift velocity,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{B}$ is the magnetic field.
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
