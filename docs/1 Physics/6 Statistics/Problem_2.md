@@ -141,3 +141,69 @@ Where:
 
 This formula provides a way to estimate $\pi$ using physical experimentation, and it is one of the earliest known probabilistic methods to do so.
 
+# Part 2: Estimating π Using Buffon's Needle
+
+## Task 2: Simulation
+
+### Simulation of Buffon’s Needle:
+
+In this task, we will simulate the random dropping of a needle on a plane with parallel lines. We will count the number of times the needle crosses one of these lines and use that information to estimate $\pi$ based on the formula derived in Task 1.
+
+### Steps for the Simulation:
+
+1. **Simulate the Needle Drop**: Randomly generate the center position and angle of the needle. 
+2. **Check for Line Crossing**: Determine whether the needle crosses any of the parallel lines based on its center position and angle.
+3. **Estimate π**: Use the formula:
+   $$ \pi \approx \frac{2L \cdot N}{d \cdot C} $$  
+   where:
+   - $L$ is the length of the needle,
+   - $N$ is the total number of throws,
+   - $d$ is the distance between the parallel lines,
+   - $C$ is the number of needle crossings.
+
+![alt text](image-8.png)
+
+Explanation of the Code:
+Needle Drop Simulation:
+
+We simulate the drop of a needle by randomly selecting an angle $\theta$ between $0$ and $\frac{\pi}{2}$ (since the angle is uniformly distributed in that range).
+
+We also randomly select the distance $x$ from the center of the needle to the nearest line, which is uniformly distributed between $0$ and $\frac{d}{2}$.
+
+Line Crossing Check:
+
+The condition for the needle crossing a line is given by: 
+𝑥
+≤
+𝐿
+2
+sin
+⁡
+(
+𝜃
+)
+x≤ 
+2
+L
+​
+ sin(θ) If this condition is true, the needle crosses a line.
+
+Estimate π:
+
+After simulating $N$ throws, we count how many times the needle crosses a line (denoted by $C$).
+
+We then use the formula: 
+𝜋
+≈
+2
+𝐿
+⋅
+𝑁
+𝑑
+⋅
+𝐶
+π≈ 
+d⋅C
+2L⋅N
+​
+  to estimate $\pi$.
