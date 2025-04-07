@@ -93,3 +93,51 @@ As we increase the number of random points used in the Monte Carlo simulation, t
 We can plot the estimated value of $\pi$ for different sample sizes and observe how the estimate improves with more points.
 
 ![alt text](image-7.png)
+
+# Part 2: Estimating π Using Buffon's Needle
+
+## Task 1: Theoretical Foundation
+
+### Buffon’s Needle Problem:
+
+Buffon’s Needle is a famous problem in probability theory that allows for the estimation of $\pi$ based on a simple experiment involving a needle and parallel lines on a flat plane. The problem involves throwing a needle of a certain length onto a plane that has parallel lines drawn at a fixed distance apart, and determining how often the needle crosses one of these lines.
+
+### Problem Setup:
+
+1. **Needle Length ($L$)**: The length of the needle is denoted as $L$.
+2. **Distance Between Lines ($d$)**: The distance between two adjacent parallel lines is denoted as $d$.
+3. **Number of Throws ($N$)**: The number of times the needle is thrown onto the plane is denoted as $N$.
+4. **Number of Crossings ($C$)**: The number of times the needle crosses one of the parallel lines is denoted as $C$.
+
+### Derivation of the Formula:
+
+The probability $P$ that the needle will cross a line is given by a known result from geometry and probability:
+
+$$ P = \frac{2L}{\pi d} $$
+
+Where:
+- $L$ is the length of the needle.
+- $d$ is the distance between the parallel lines.
+- $\pi$ is the mathematical constant.
+
+This probability is derived from the geometry of the problem, where we consider the relationship between the angle of the needle and its distance from the nearest line. 
+
+### Estimating π:
+
+We can estimate $\pi$ by rearranging the formula to express it in terms of the known quantities of the experiment:
+
+$$ \pi \approx \frac{2L \cdot N}{d \cdot C} $$
+
+Where:
+- $L$ is the length of the needle.
+- $N$ is the total number of throws.
+- $d$ is the distance between the parallel lines.
+- $C$ is the number of times the needle crosses a line.
+
+### Explanation of the Formula:
+
+1. **Needle Length and Distance Between Lines**: The formula shows that $\pi$ depends on the length of the needle $L$ and the distance between the parallel lines $d$.
+2. **Number of Throws and Crossings**: The estimate of $\pi$ improves as we increase the number of throws $N$ and crossings $C$. With more throws, the ratio of crossings to throws will converge to the actual probability, which is related to $\pi$.
+
+This formula provides a way to estimate $\pi$ using physical experimentation, and it is one of the earliest known probabilistic methods to do so.
+
