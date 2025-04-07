@@ -45,6 +45,7 @@ Repeat the process multiple times (e.g., 1000 iterations) to create a sampling d
 
 - Plot histograms of the sample means for each sample size (5, 10, 30, 50).
 - Observe how the histograms converge to a normal distribution as the sample size increases, illustrating the Central Limit Theorem (CLT).
+![alt text](image-1.png)
 
 # Task 3: Parameter Exploration
 
