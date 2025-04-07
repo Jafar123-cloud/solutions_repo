@@ -45,3 +45,31 @@ Repeat the process multiple times (e.g., 1000 iterations) to create a sampling d
 
 - Plot histograms of the sample means for each sample size (5, 10, 30, 50).
 - Observe how the histograms converge to a normal distribution as the sample size increases, illustrating the Central Limit Theorem (CLT).
+
+# Task 3: Parameter Exploration
+
+## Investigating the Effect of Population Distribution and Sample Size
+
+Explore how the shape of the original population distribution and the sample size influence the rate of convergence to normality.
+
+### Key Considerations:
+- **Population Distribution**: Investigate how different population distributions (Uniform, Exponential, Binomial) affect the convergence to normality in the sampling distribution.
+- **Sample Size**: Observe how increasing the sample size impacts the sampling distribution of the sample mean. Larger sample sizes generally lead to a faster convergence to a normal distribution, according to the Central Limit Theorem (CLT).
+
+### Formula for Variance of the Sampling Distribution:
+The variance of the sample mean is given by:  
+$$ \sigma_{\bar{x}}^2 = \frac{\sigma^2}{n} $$  
+where $\sigma_{\bar{x}}^2$ is the variance of the sample mean, $\sigma^2$ is the variance of the original population, and $n$ is the sample size.
+
+### Impact of Population Variance:
+- **Population Variance ($\sigma^2$)**: The spread of the sampling distribution is affected by the population's variance. A larger population variance results in a wider sampling distribution.
+- **Sampling Distribution Variance**: As the sample size increases, the variance of the sampling distribution decreases (this is due to the $\frac{\sigma^2}{n}$ relationship).
+
+### Visualization:
+- **Step 1**: Generate histograms for different sample sizes (e.g., 5, 10, 30, 50) for each population distribution. 
+- **Step 2**: For each sample size, repeat the sampling process 1000 times to build the sampling distribution of the sample mean.
+- **Step 3**: Plot the histograms to observe the convergence to normality.
+- **Step 4**: Compare how the population's variance affects the spread of the sampling distribution.
+- **Step 5**: Use Python libraries such as Matplotlib to generate the histograms for each scenario.
+
+![alt text](image.png)
