@@ -226,3 +226,10 @@ In this task, we will explore how the number of needle drops (throws) affects th
 As we increase the number of needle drops, the estimate of $\pi$ should converge to the true value. This happens because the ratio of crossings to total throws will better approximate the theoretical probability, which is related to $\pi$. We can investigate how the estimate improves with more throws.
 
 ![alt text](image-9.png)
+
+Explanation of the Code:
+We simulate Buffon’s Needle with different numbers of throws: 100, 500, 1000, 5000, 10000, 50000, and 100000.
+
+For each number of throws, we estimate $\pi$ using the formula derived in Task 1 and store the results.
+
+The estimates are plotted on a logarithmic x-axis to observe the convergence as the number of needle drops increases.
