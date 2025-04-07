@@ -76,3 +76,21 @@ where $\sigma_{\bar{x}}^2$ is the variance of the sample mean, $\sigma^2$ is the
 - **Step 5**: Use Python libraries such as Matplotlib to generate the histograms for each scenario.
 
 ![alt text](image.png)
+
+# Task 4: Practical Applications
+
+## Formula:
+
+The Central Limit Theorem (CLT) tells us that the sampling distribution of the sample mean will approximate a normal distribution as the sample size increases, even if the population distribution is not normal.
+
+The formula for the sampling distribution of the sample mean is:
+
+$$ \mu_{\bar{x}} = \mu $$  
+$$ \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} $$
+
+Where:
+- $\mu_{\bar{x}}$ is the mean of the sampling distribution of the sample mean, which equals the population mean $\mu$.
+- $\sigma_{\bar{x}}$ is the standard deviation of the sampling distribution of the sample mean, which is the population standard deviation $\sigma$ divided by the square root of the sample size $n$.
+
+
+![alt text](image-3.png)
