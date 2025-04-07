@@ -58,3 +58,11 @@ Blue Points: These are the points that fall inside the unit circle.
 Red Points: These are the points that fall outside the unit circle.
 
 The plot visually demonstrates how the points are distributed within the square and the circle, illustrating the Monte Carlo method for estimating $\pi$.
+
+# Task 3: Visualization - Plotting Randomly Generated Points
+
+## Visualization:
+
+In this task, we will visualize the results of the Monte Carlo simulation by plotting the randomly generated points. We will distinguish the points that fall inside the unit circle from those that fall outside, and display the plot.
+
+![alt text](image-6.png)
