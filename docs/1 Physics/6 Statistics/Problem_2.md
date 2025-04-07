@@ -28,3 +28,33 @@ $$ \pi \approx 4 \cdot \frac{N_{\text{circle}}}{N_{\text{total}}} $$
 $$ \pi \approx 4 \cdot \frac{N_{\text{circle}}}{N_{\text{total}}} $$
 
 ![alt text](image-4.png)
+
+# Task 2: Simulation - Estimating π through Monte Carlo Method
+
+## Simulation:
+
+In this task, we will simulate the estimation of $\pi$ by generating random points in a 2D square bounding a unit circle. We will count how many of these points fall inside the circle and use that ratio to estimate the value of $\pi$.
+
+### Steps:
+1. **Generate random points**: Create random points $(x, y)$ uniformly distributed within the square with coordinates between $-1$ and $1$ for both $x$ and $y$.
+2. **Check if the point is inside the unit circle**: The condition for a point to be inside the unit circle is:
+   $$ x^2 + y^2 \leq 1 $$  
+   If the point satisfies this condition, it lies inside the circle.
+3. **Estimate $\pi$**: The ratio of the points inside the circle to the total points will approximate the ratio of the areas of the circle and square:
+   $$ \pi \approx 4 \cdot \frac{N_{\text{circle}}}{N_{\text{total}}} $$
+
+   Explanation of the Code:
+Random Points: We generate num_points random points with $x$ and $y$ values uniformly distributed between $-1$ and $1$.
+
+Check for Points Inside the Circle: We use the condition $x^2 + y^2 \leq 1$ to check if a point lies inside the unit circle.
+
+Estimate π: We calculate the ratio of points inside the circle to the total number of points, and multiply by 4 to estimate $\pi$.
+
+![alt text](image-5.png)
+
+Explanation of the Plot:
+Blue Points: These are the points that fall inside the unit circle.
+
+Red Points: These are the points that fall outside the unit circle.
+
+The plot visually demonstrates how the points are distributed within the square and the circle, illustrating the Monte Carlo method for estimating $\pi$.
