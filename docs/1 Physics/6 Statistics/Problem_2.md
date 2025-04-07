@@ -840,18 +840,6 @@ Red dots represent the points that are outside the unit circle.
 
 This visualization demonstrates the distribution of points and how they help estimate $\pi$ based on the ratio of points inside the circle.
 
-vbnet
-Copy
-
-This markdown provides the Python code for visualizing the points in the simulation. You can now copy and paste it into your Visual Studio Code. Let me know when you're ready for the next task!
-You said:
-4 Analysis:
-
-Investigate how the accuracy of the estimate improves as the number of points increases.
-Discuss the convergence rate and computational considerations for this method.
-ChatGPT said:
-Here's the fourth task in markdown format for Visual Studio Code, focusing on the analysis of the accuracy, convergence rate, and computational considerations of the Monte Carlo simulation:
-
 # Task 4: Analysis - Convergence and Computational Efficiency
 
 ## Analysis:
@@ -863,3 +851,5 @@ In this task, we will analyze how the accuracy of the estimate for $\pi$ improve
 As we increase the number of random points used in the Monte Carlo simulation, the estimated value of $\pi$ should converge to the true value. This is because the ratio of points inside the circle to the total number of points will better approximate the ratio of the areas of the circle and the square as the sample size increases.
 
 We can plot the estimated value of $\pi$ for different sample sizes and observe how the estimate improves with more points.
+
+![alt text](image-7.png)
