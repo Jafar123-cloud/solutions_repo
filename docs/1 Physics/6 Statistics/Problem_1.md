@@ -29,6 +29,8 @@ For each distribution, generate a large dataset representing the population.
    $$ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} $$  
    where $n$ is the number of trials, $k$ is the number of successes, and $p$ is the probability of success in a single trial.
 
+   ![alt text](image-2.png)
+
 # Task 2: Sampling and Visualization
 
 ## Sampling Data
