@@ -214,3 +214,15 @@ d⋅C
 2L⋅N
 ​
   to estimate $\pi$.
+
+## Task 4: Analysis
+
+### Analysis of Needle Drops and Estimate Accuracy:
+
+In this task, we will explore how the number of needle drops (throws) affects the accuracy of the estimated value of $\pi$. We will also compare the convergence rate of the Buffon's Needle method to the circle-based Monte Carlo method for estimating $\pi$.
+
+### Investigating Accuracy with Increasing Needle Drops:
+
+As we increase the number of needle drops, the estimate of $\pi$ should converge to the true value. This happens because the ratio of crossings to total throws will better approximate the theoretical probability, which is related to $\pi$. We can investigate how the estimate improves with more throws.
+
+![alt text](image-9.png)
