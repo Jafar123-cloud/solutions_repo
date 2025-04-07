@@ -161,6 +161,13 @@ In this task, we will simulate the random dropping of a needle on a plane with p
    - $d$ is the distance between the parallel lines,
    - $C$ is the number of needle crossings.
 
+
+## Task 3: Visualization
+
+### Visualization of Needle Positions Relative to the Lines
+
+In this task, we will visualize the simulation of Buffon’s Needle by plotting the needle positions relative to the parallel lines. We will distinguish between the needles that cross the lines and those that do not.
+
 ![alt text](image-8.png)
 
 Explanation of the Code:
