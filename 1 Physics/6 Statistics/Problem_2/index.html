@@ -264,6 +264,60 @@ Random Points: We generate random points <span class="arithmatex">\((x, y)\)</sp
 <li><strong>Number of Throws and Crossings</strong>: The estimate of <span class="arithmatex">\(\pi\)</span> improves as we increase the number of throws <span class="arithmatex">\(N\)</span> and crossings <span class="arithmatex">\(C\)</span>. With more throws, the ratio of crossings to throws will converge to the actual probability, which is related to <span class="arithmatex">\(\pi\)</span>.</li>
 </ol>
 <p>This formula provides a way to estimate <span class="arithmatex">\(\pi\)</span> using physical experimentation, and it is one of the earliest known probabilistic methods to do so.</p>
+<h1 id="part-2-estimating-using-buffons-needle_1">Part 2: Estimating π Using Buffon's Needle</h1>
+<h2 id="task-2-simulation">Task 2: Simulation</h2>
+<h3 id="simulation-of-buffons-needle">Simulation of Buffon’s Needle:</h3>
+<p>In this task, we will simulate the random dropping of a needle on a plane with parallel lines. We will count the number of times the needle crosses one of these lines and use that information to estimate <span class="arithmatex">\(\pi\)</span> based on the formula derived in Task 1.</p>
+<h3 id="steps-for-the-simulation">Steps for the Simulation:</h3>
+<ol>
+<li><strong>Simulate the Needle Drop</strong>: Randomly generate the center position and angle of the needle. </li>
+<li><strong>Check for Line Crossing</strong>: Determine whether the needle crosses any of the parallel lines based on its center position and angle.</li>
+<li><strong>Estimate π</strong>: Use the formula:
+   $$ \pi \approx \frac{2L \cdot N}{d \cdot C} $$<br/>
+   where:</li>
+<li><span class="arithmatex">\(L\)</span> is the length of the needle,</li>
+<li><span class="arithmatex">\(N\)</span> is the total number of throws,</li>
+<li><span class="arithmatex">\(d\)</span> is the distance between the parallel lines,</li>
+<li><span class="arithmatex">\(C\)</span> is the number of needle crossings.</li>
+</ol>
+<p><img alt="alt text" src="../image-8.png"/></p>
+<p>Explanation of the Code:
+Needle Drop Simulation:</p>
+<p>We simulate the drop of a needle by randomly selecting an angle <span class="arithmatex">\(\theta\)</span> between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\frac{\pi}{2}\)</span> (since the angle is uniformly distributed in that range).</p>
+<p>We also randomly select the distance <span class="arithmatex">\(x\)</span> from the center of the needle to the nearest line, which is uniformly distributed between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\frac{d}{2}\)</span>.</p>
+<p>Line Crossing Check:</p>
+<p>The condition for the needle crossing a line is given by: 
+𝑥
+≤
+𝐿
+2
+sin
+⁡
+(
+𝜃
+)
+x≤ 
+2
+L
+​
+ sin(θ) If this condition is true, the needle crosses a line.</p>
+<p>Estimate π:</p>
+<p>After simulating <span class="arithmatex">\(N\)</span> throws, we count how many times the needle crosses a line (denoted by <span class="arithmatex">\(C\)</span>).</p>
+<p>We then use the formula: 
+𝜋
+≈
+2
+𝐿
+⋅
+𝑁
+𝑑
+⋅
+𝐶
+π≈ 
+d⋅C
+2L⋅N
+​
+  to estimate <span class="arithmatex">\(\pi\)</span>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
