@@ -216,6 +216,32 @@
 <li>Plot histograms of the sample means for each sample size (5, 10, 30, 50).</li>
 <li>Observe how the histograms converge to a normal distribution as the sample size increases, illustrating the Central Limit Theorem (CLT).</li>
 </ul>
+<h1 id="task-3-parameter-exploration">Task 3: Parameter Exploration</h1>
+<h2 id="investigating-the-effect-of-population-distribution-and-sample-size">Investigating the Effect of Population Distribution and Sample Size</h2>
+<p>Explore how the shape of the original population distribution and the sample size influence the rate of convergence to normality.</p>
+<h3 id="key-considerations">Key Considerations:</h3>
+<ul>
+<li><strong>Population Distribution</strong>: Investigate how different population distributions (Uniform, Exponential, Binomial) affect the convergence to normality in the sampling distribution.</li>
+<li><strong>Sample Size</strong>: Observe how increasing the sample size impacts the sampling distribution of the sample mean. Larger sample sizes generally lead to a faster convergence to a normal distribution, according to the Central Limit Theorem (CLT).</li>
+</ul>
+<h3 id="formula-for-variance-of-the-sampling-distribution">Formula for Variance of the Sampling Distribution:</h3>
+<p>The variance of the sample mean is given by:<br/>
+$$ \sigma_{\bar{x}}^2 = \frac{\sigma^2}{n} $$<br/>
+where <span class="arithmatex">\(\sigma_{\bar{x}}^2\)</span> is the variance of the sample mean, <span class="arithmatex">\(\sigma^2\)</span> is the variance of the original population, and <span class="arithmatex">\(n\)</span> is the sample size.</p>
+<h3 id="impact-of-population-variance">Impact of Population Variance:</h3>
+<ul>
+<li><strong>Population Variance (<span class="arithmatex">\(\sigma^2\)</span>)</strong>: The spread of the sampling distribution is affected by the population's variance. A larger population variance results in a wider sampling distribution.</li>
+<li><strong>Sampling Distribution Variance</strong>: As the sample size increases, the variance of the sampling distribution decreases (this is due to the <span class="arithmatex">\(\frac{\sigma^2}{n}\)</span> relationship).</li>
+</ul>
+<h3 id="visualization_1">Visualization:</h3>
+<ul>
+<li><strong>Step 1</strong>: Generate histograms for different sample sizes (e.g., 5, 10, 30, 50) for each population distribution. </li>
+<li><strong>Step 2</strong>: For each sample size, repeat the sampling process 1000 times to build the sampling distribution of the sample mean.</li>
+<li><strong>Step 3</strong>: Plot the histograms to observe the convergence to normality.</li>
+<li><strong>Step 4</strong>: Compare how the population's variance affects the spread of the sampling distribution.</li>
+<li><strong>Step 5</strong>: Use Python libraries such as Matplotlib to generate the histograms for each scenario.</li>
+</ul>
+<p><img alt="alt text" src="../image.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
