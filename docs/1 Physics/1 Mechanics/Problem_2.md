@@ -212,54 +212,6 @@ Where:
 
 We will use the Runge-Kutta method to solve this second-order differential equation.
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-
-# Define the system of ODEs
-def damped_pendulum(t, y, gamma, omega_0, A, omega):
-    theta, theta_dot = y
-    dtheta_dt = theta_dot
-    dtheta_dot_dt = -2 * gamma * theta_dot - omega_0**2 * np.sin(theta) + A * np.cos(omega * t)
-    return [dtheta_dt, dtheta_dot_dt]
-
-# Parameters
-gamma = 0.1  # Damping coefficient
-omega_0 = 2.0  # Natural frequency
-A = 0.5  # Amplitude of the driving force
-omega = 1.0  # Driving frequency
-
-# Initial conditions
-theta_0 = 0.1  # Initial angle in radians
-theta_dot_0 = 0.0  # Initial angular velocity
-y0 = [theta_0, theta_dot_0]  # Initial conditions
-
-# Time span for the simulation
-t_span = (0, 100)  # Time interval for the simulation
-t_eval = np.linspace(t_span[0], t_span[1], 10000)  # Time points for evaluation
-
-# Solve the ODE
-sol = solve_ivp(damped_pendulum, t_span, y0, args=(gamma, omega_0, A, omega), t_eval=t_eval)
-
-# Plot the results
-plt.figure(figsize=(10, 6))
-plt.subplot(2, 1, 1)
-plt.plot(sol.t, sol.y[0], label='Angle (theta)')
-plt.xlabel('Time (s)')
-plt.ylabel('Angle (rad)')
-plt.title('Forced Damped Pendulum Motion')
-plt.grid(True)
-
-plt.subplot(2, 1, 2)
-plt.plot(sol.t, sol.y[1], label='Angular Velocity (theta_dot)', color='r')
-plt.xlabel('Time (s)')
-plt.ylabel('Angular Velocity (rad/s)')
-plt.grid(True)
-
-plt.tight_layout()
-plt.show()
-```
 ![alt text](image-1.png)
 
 ![alt text](image-5.png)
