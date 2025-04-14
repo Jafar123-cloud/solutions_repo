@@ -184,75 +184,8 @@ For circular orbits, we will simulate the motion of a satellite and calculate th
 
 Below is a Python script that simulates circular orbits for different orbital radii and calculates the orbital period based on Kepler's Third Law.
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
-M = 5.972e24     # Mass of Earth (kg)
-pi = np.pi
-
-# Function to calculate orbital period using Kepler's Third Law
-def orbital_period(r):
-    T = 2 * pi * np.sqrt(r**3 / (G * M))  # Orbital period (seconds)
-    return T
-
-# Range of orbital radii (in meters)
-radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km
-
-# Calculate the orbital periods for each radius
-periods = orbital_period(radii)
-
-# Convert orbital period from seconds to days
-periods_days = periods / (60 * 60 * 24)
-
-# Plot the relationship between orbital period and orbital radius
-plt.figure (figsize=(8, 6))
-plt.plot (radii, periods_days, label='Orbital Period', color='b')
-plt.xlabel ('Orbital Radius (m)')
-plt.ylabel ('Orbital Period (days)')
-plt.title ('Orbital Period vs Orbital Radius')
-plt. (True)
-plt.legend ()
-plt.show ()
-```
 ![alt text](image.png)
-```
-bodies = {
-    'Earth': 5.972e24,
-    'Mars': 6.39e23,
-    'Jupiter': 1.898e27
-}
 
-plt.figure(figsize=(10,6))
-for name, mass in bodies.items():
-    periods = 2*np.pi*np.sqrt(radii**3/(G*mass))/(60*60*24)
-    plt.plot(radii, periods, label=name)
-
-plt.xlabel('Orbital Radius (m)')
-plt.ylabel('Period (days)')
-plt.title('Orbital Period for Different Central Bodies')
-plt.legend()
-plt.grid(True)
-plt.show()
-```
 ![alt text](image-4.png)
 
-```
-from mpl_toolkits.mplot3d import Axes3D
-
-theta = np.linspace(0, 2*np.pi, 100)
-r = 7e6  # LEO radius
-x = r * np.cos(theta)
-y = r * np.sin(theta)
-z = np.zeros_like(x)
-
-fig = plt.figure(figsize=(8,6))
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(x, y, z, 'b-')
-ax.scatter([0], [0], [0], color='g', s=100)
-ax.set_title('Circular Orbit Visualization')
-plt.show()
-```
 ![alt text](image-5.png)

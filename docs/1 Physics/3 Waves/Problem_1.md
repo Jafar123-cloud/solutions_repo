@@ -74,7 +74,7 @@ where:
 - $\omega = 2\pi f$ = angular frequency.
 - $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ = distance from the source.
 - $\phi$ = initial phase.
-
+flkf;la
 ---
 
 ## **Superposition of Waves from Multiple Sources**
