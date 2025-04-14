@@ -66,3 +66,12 @@ $$ g_{\text{standard}} = 9.81 \, \text{m/s}^2 $$
    - Calculated $g$ and $\Delta g$.
    
 2. The discussion on sources of uncertainty and their impact on the results.
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
